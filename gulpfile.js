@@ -53,7 +53,7 @@ gulp.task('style', function() {
     .pipe(postcss([
       autoprefixer({
         browsers: [
-          'last 2 versions'
+          'last 2 versions', 'iOS 8'
         ]
       })
     ]))

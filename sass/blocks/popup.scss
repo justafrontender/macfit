@@ -1,0 +1,23 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $popup-z-index;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  color: $primary-text-color;
+  background: white;
+  // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  overflow: scroll;
+
+  &--visible {
+    display: block;
+  }
+}
+
+.popup__controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

@@ -2,14 +2,26 @@
   position: absolute;
   top: 0;
   right: 0;
+  width: 55px;
+  height: 55px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.menu-toggler i {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 5px;
   height: 5px;
   padding: 25px;
+  border: none;
   background: gray;
   background-clip: content-box;
   border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s all;
 
   &::before {
     content: '';

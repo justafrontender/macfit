@@ -1,0 +1,22 @@
+.good-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.good-details__image img {
+  display: block;
+  width: 100%;
+}
+
+.good-details__infopane {
+  position: relative;
+  padding: 10px;
+}
+
+.good-details__title {
+  font-size: 15px;
+}
+
+.good-details__cart-btn {
+  width: 100%;
+}

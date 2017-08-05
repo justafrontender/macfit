@@ -1,0 +1,40 @@
+.price-tag {
+  position: absolute;
+  top: -45px;
+  right: -3px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: #d58913;
+  transform: rotate(6deg);
+}
+
+.price-tag__price {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(117, 60, 7, 0.8);
+  text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+  background: #d58913;
+  background-clip: text;
+}
+
+.price-tag__weight {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(117, 60, 7, 0.8);
+  text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+  background: #d58913;
+  background-clip: text;
+}
+
+.price-tag--detailed {
+  right: 3px;
+
+  .price-tag__price {
+    font-size: 26px;
+  }
+
+  .price-tag__weight {
+    font-size: 16px;
+  }
+}

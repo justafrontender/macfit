@@ -1,8 +1,10 @@
 .page-footer {
   position: relative;
   border-top: solid 5px lightgray;
-  background: #eee;
-  
+  background-color: #eee;
+  @include brand-gradient($size: 200%, $desaturate: 90%, $lighten: 50%);
+  @include pane-shadow;
+
   &::before {
     content: '';
     position: absolute;

@@ -4,7 +4,6 @@
   height: 1px;
   padding: 0;
   border: 0;
-  white-space: nowrap;
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(50%);
           clip-path: inset(50%);
@@ -45,23 +44,31 @@
   }
 }
 
-@mixin brand-gradient ($size: 100px, $deg: 122deg) {
-  background: repeating-linear-gradient(
+@mixin popup-shadow () {
+  box-shadow: 0 0 7px rgba(0, 0, 0, .14), 0 10px 15px rgba(0, 0, 0, .28);
+}
+
+@mixin pane-shadow () {
+  box-shadow: 0 0 2px rgba(0, 0, 0, .14), 0 2px 4px rgba(0, 0, 0, .28);
+}
+
+@mixin brand-gradient ($size: 100px, $deg: 122deg, $desaturate: 0, $lighten: 0) {
+  background-image: repeating-linear-gradient(
     $deg,
-    #309e4a 4.65 * $size / 100,
-    #32ac62 4.65 * $size / 100,
-    #32ac62 24.37 * $size / 100,
-    #776d42 24.37 * $size / 100,
-    #776d42 30.80 * $size / 100,
-    #a07c58 30.80 * $size / 100,
-    #a07c58 50.68 * $size / 100,
-    #de9e41 50.68 * $size / 100,
-    #de9e41 55.25 * $size / 100,
-    #f1b759 55.25 * $size / 100,
-    #f1b759 74.79 * $size / 100,
-    #eeaa41 74.79 * $size / 100,
-    #eeaa41 81.81 * $size / 100,
-    #f1b759 81.81 * $size / 100,
-    #f1b759 100 * $size / 100
+    lighten(desaturate(#309e4a, $desaturate), $lighten) 4.65 * $size / 100,
+    lighten(desaturate(#32ac62, $desaturate), $lighten) 4.65 * $size / 100,
+    lighten(desaturate(#32ac62, $desaturate), $lighten) 24.37 * $size / 100,
+    lighten(desaturate(#776d42, $desaturate), $lighten) 24.37 * $size / 100,
+    lighten(desaturate(#776d42, $desaturate), $lighten) 30.80 * $size / 100,
+    lighten(desaturate(#a07c58, $desaturate), $lighten) 30.80 * $size / 100,
+    lighten(desaturate(#a07c58, $desaturate), $lighten) 50.68 * $size / 100,
+    lighten(desaturate(#de9e41, $desaturate), $lighten) 50.68 * $size / 100,
+    lighten(desaturate(#de9e41, $desaturate), $lighten) 55.25 * $size / 100,
+    lighten(desaturate(#f1b759, $desaturate), $lighten) 55.25 * $size / 100,
+    lighten(desaturate(#f1b759, $desaturate), $lighten) 74.79 * $size / 100,
+    lighten(desaturate(#eeaa41, $desaturate), $lighten) 74.79 * $size / 100,
+    lighten(desaturate(#eeaa41, $desaturate), $lighten) 81.81 * $size / 100,
+    lighten(desaturate(#f1b759, $desaturate), $lighten) 81.81 * $size / 100,
+    lighten(desaturate(#f1b759, $desaturate), $lighten) 100 * $size / 100
   );
 }

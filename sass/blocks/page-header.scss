@@ -1,7 +1,8 @@
 .page-header {
   position: relative;
   border-bottom: solid 5px lightgray;
-  
+  @include pane-shadow;
+
   &::before {
     content: '';
     position: absolute;

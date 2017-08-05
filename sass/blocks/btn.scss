@@ -1,0 +1,11 @@
+.btn {
+  padding: 14px;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &--to-cart {
+    background-color: #309e4a;
+    color: white;
+  }
+}

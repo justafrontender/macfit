@@ -1,7 +1,15 @@
 .good-tile {
-  width: 50%;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 46%;
+  margin: 2% 0;
   box-sizing: border-box;
+  border-radius: 2px;
+  @include pane-shadow;
+
+  @media #{$tablet-widths} {
+    width: 30%;
+  }
 }
 
 .good-tile__image {
@@ -11,18 +19,49 @@
 .good-tile__image img {
   display: block;
   width: 100%;
-  border-radius: 50%;
+  border-radius: 2px;
 }
 
-.good-tile__details {
-  text-align: center;
+.good-tile__specs {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  position: relative;
 }
 
 .good-tile__title {
+  flex-grow: 1;
   font-size: 15px;
+  padding: 5px;
+  margin: 5px 0;
 }
 
 .good-tile__title a {
   color: $menu-color;
   text-decoration: none;
+}
+
+.good-tile__basket-btn {
+  flex-shrink: 0;
+  position: relative;
+  width: 30px;
+  min-height: 30px;
+  border: 0;
+  border-left: solid 1px lightgray;
+  font-size: 0;
+  color: transparent;
+  background: transparent;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: url('../img/icon-cart.svg') 50% no-repeat;
+  }
 }

@@ -6,6 +6,7 @@ __MACOSX
 *.pdf
 *.psd
 *.sublime*
+.publish
 css/*.css
 node_modules/
 Thumbs.db

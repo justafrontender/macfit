@@ -11,17 +11,21 @@
   <header class="page-header">
     <div class="container page-header__container">
       <a class="logo"><img src="img/logo.svg" alt="MacFit"></a>
-      <span class="menu-toggler" tabindex="0"></span>
+      <button class="menu-toggler" type="button">
+        <i></i>
+      </button>
       <nav class="main-nav">
         <ul class="main-nav__list main-nav__list--nojs">
           <li><a class="main-nav__link">Еда</a></li>
           <li><a class="main-nav__link" href="#">Качество</a></li>
           <li><a class="main-nav__link" href="#">Доставка и оплата</a></li>
           <li><a class="main-nav__link" href="#">Кто мы</a></li>
+          <li><a class="main-nav__link" href="#">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <main class="page-content">
     <div class="container">
       <h1 class="page-title page-title--hidden">MacFit - фастфуд, который можно</h1>
@@ -29,150 +33,216 @@
         <h2 class="goods-list__title">Меню MacFit</h2>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="Fitburg классик">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitburg классик</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitburg классик</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="Fitburg Фулхаус">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitburg Фулхаус</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitburg Фулхаус</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="Fitburg XXL">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitburg XXL</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitburg XXL</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="Fitburg Итфиш красная рыба">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitburg Итфиш красная рыба</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitburg Итфиш красная рыба</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="Fitburg Блэкснэк">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitburg Блэкснэк</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitburg Блэкснэк</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="Fitburg ФитБосс">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitburg ФитБосс</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitburg ФитБосс</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="Fitburg Французский парень">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitburg Французский парень</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitburg Французский парень</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="Fitburg Vega">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitburg Vega</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitburg Vega</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="" alt="Наггетсы + йогуртовый соус">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Наггетсы + йогуртовый соус</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Наггетсы + йогуртовый соус</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="" alt="Пицца овощная">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Пицца овощная</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Пицца овощная</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="" alt="Пицца мясная">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Пицца мясная</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Пицца мясная</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="" alt="Fitgrill с куриной грудкой">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitgrill с куриной грудкой</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitgrill с куриной грудкой</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
 
         <article class="good-tile">
-          <a href="#" class="good-tile__image">
+          <a class="good-tile__image js__open-popup" href="#">
             <img src="img/content/burger.jpg" alt="" alt="Fitgrill с куриной грудкой и французской горчицей">
           </a>
-          <div class="good-tile__details">
-            <h3 class="good-tile__title"><a href="#">Fitgrill с куриной грудкой и французской горчицей</a></h3>
-            <span class="good-tile__price">1240р.</span>
-            <a href="#" class="good-tile__basket-btn">Заказать</a>
+          <div class="good-tile__specs">
+            <h3 class="good-tile__title">
+              <a class="js__open-popup" href="#">Fitgrill с куриной грудкой и французской горчицей</a>
+            </h3>
+            <div class="price-tag">
+              <span class="price-tag__price">1240р.</span>
+              <span class="price-tag__weight">380гр.</span>
+            </div>
+            <button class="good-tile__basket-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
           </div>
         </article>
       </section>
     </div>
   </main>
+
   <footer class="page-footer">
     <div class="container page-footer__container">
       <section class="social-links">
@@ -190,6 +260,44 @@
       </section>
     </div>
   </footer>
+
+  <div class="popup-shade"></div>
+  <div class="popup">
+    <div class="popup__controls">
+      <button class="popup-button popup-button--close" type="button">Закрыть</button>
+    </div>
+
+    <section class="good-details">
+      <div class="good-details__image">
+        <img src="img/content/burger.jpg" alt="Fitburg XXL" width="100%">
+      </div>
+
+      <div class="good-details__infopane">
+        <h2 class="good-details__title">Fitburg XXL</h2>
+        <div class="price-tag price-tag--detailed">
+          <span class="price-tag__price">1240р.</span>
+          <span class="price-tag__weight">380гр.</span>
+        </div>
+
+        <div class="good-details__description">
+          <p>
+            Цельнозерновая бездрожжевая булка<br>
+            натуральная куриная котлета «EatFit»*2<br>
+            сыр «Сулугуни»*2<br>
+            йогуртовый соус<br>
+            пекинская капуста<br>
+            перец болгарский<br>
+            корнишон<br>
+            кетчуп<br>
+            лук маринованный<br>
+            зелень
+          </p>
+        </div>
+
+        <button class="btn btn--to-cart good-details__cart-btn" type="button" title="Добавить в заказ">Добавить в заказ</button>
+      </div>
+    </section>
+  </div>
   <script src="js/script.js"></script>
 </body>
 </html>

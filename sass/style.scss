@@ -1,12 +1,13 @@
 //globals
-@import 'global/normalize.scss';
 @import 'vars.scss';
 @import 'mixins.scss';
+@import 'global/normalize.scss';
 @import 'global/fonts.scss';
 @import 'global/layout.scss';
 
 // blocks
 @import 'blocks/container.scss';
+@import 'blocks/btn.scss';
 @import 'blocks/page-header.scss';
 @import 'blocks/page-title.scss';
 @import 'blocks/logo.scss';
@@ -16,6 +17,12 @@
 @import 'blocks/page-content.scss';
 @import 'blocks/goods-list.scss';
 @import 'blocks/good-tile.scss';
+@import 'blocks/price-tag.scss';
 
 @import 'blocks/page-footer.scss';
 @import 'blocks/social-links.scss';
+
+@import 'blocks/popup-shade.scss';
+@import 'blocks/popup.scss';
+@import 'blocks/popup-button.scss';
+@import 'blocks/good-details.scss';
