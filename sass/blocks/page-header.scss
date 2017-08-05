@@ -1,0 +1,20 @@
+.page-header {
+  position: relative;
+  border-bottom: solid 5px lightgray;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    @include brand-gradient($size: 200px);
+  }
+}
+
+.page-header__container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}

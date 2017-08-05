@@ -1,0 +1,23 @@
+.page-footer {
+  position: relative;
+  border-top: solid 5px lightgray;
+  background: #eee;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    @include brand-gradient($size: 200px);
+  }
+}
+
+.page-footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
