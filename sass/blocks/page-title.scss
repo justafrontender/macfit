@@ -1,4 +1,6 @@
 .page-title {
+  font-size: 25px;
+
   &--hidden {
     @include visually-hidden;
   }

@@ -8,3 +8,14 @@
 .social-links__list li {
   padding: 5px;
 }
+
+.social-links__link {
+  display: block;
+  font-size: 0;
+  color: transparent;
+}
+
+.social-links__link svg {
+  width: 25px;
+  height: 25px;
+}

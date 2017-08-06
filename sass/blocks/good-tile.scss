@@ -7,7 +7,7 @@
   border-radius: 2px;
   @include pane-shadow;
 
-  @media #{$tablet-widths} {
+  @media #{$mobile-wide-widths} {
     width: 30%;
   }
 }
@@ -63,5 +63,9 @@
     right: 4px;
     bottom: 4px;
     background: url('../img/icon-cart.svg') 50% no-repeat;
+  }
+
+  @media #{$mobile-wide-widths} {
+    width: 40px;
   }
 }

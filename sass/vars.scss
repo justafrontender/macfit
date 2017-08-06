@@ -7,6 +7,7 @@ $popup-control-bg: rgba(240,197,46,.5);
 
 $mobile-min-width: 320px;
 $desktop-width: 1000px;
+$mobile-wide-widths: #{'(min-width: 568px)'};
 $tablet-widths: #{'(min-width: 768px)'};
 $desktop-widths: #{'(min-width: 1000px)'};
 $mobile-only: #{'(max-width: 767px)'};
