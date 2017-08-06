@@ -21,3 +21,14 @@
 .good-details__cart-btn {
   width: 100%;
 }
+
+@media #{$tablet-widths} {
+  .good-details {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .good-details__infopane {
+    position: static;
+  }
+}

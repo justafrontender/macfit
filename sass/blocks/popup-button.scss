@@ -8,6 +8,7 @@
   font-size: 0;
   background-color: $popup-control-bg;
   cursor: pointer;
+  @include pane-shadow;
 }
 
 .popup-button--close {
@@ -19,7 +20,7 @@
     left: 5px;
     width: 30px;
     height: 2px;
-    background-color: #fff;
+    background-color: #776d42;
   }
 
   &::after {
