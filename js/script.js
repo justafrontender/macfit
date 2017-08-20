@@ -17,7 +17,7 @@
   var popup = document.querySelector('.popup');
   var popupShade = document.querySelector('.popup-shade');
   var popupOpeners = document.querySelectorAll('.js__open-popup');
-  var popupClosers = document.querySelectorAll('.popup-shade, .popup-button--close');
+  var popupClosers = document.querySelectorAll('.popup-shade, .js__close-popup');
 
   function popupOpen(e) {
     e.preventDefault();
@@ -46,6 +46,9 @@
 (function () {
   var _overlay = document.querySelector('.popup');
   var _clientY = null; // remember Y position on touch start
+
+  if (!_overlay)
+    return false;
 
   _overlay.addEventListener('touchstart', function (event) {
       if (event.targetTouches.length === 1) {
@@ -79,4 +82,35 @@
       // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight#Problems_and_solutions
       return _overlay.scrollHeight - _overlay.scrollTop <= _overlay.clientHeight;
   }
-}())
+}());
+
+// quantity input
+(function() {
+  var buttons = document.querySelectorAll('.js__field-number--modify');
+
+  if (!buttons) return false;
+
+  for (var i = 0; i < buttons.length; i++)
+    buttons[i].addEventListener('click', modifyFieldNumber);
+
+  function modifyFieldNumber(e) {
+    e.preventDefault();
+    var action = e.target.attributes['data-action'].value,
+    input = e.target.parentNode.querySelector('input.field-number__input'),
+    step = parseFloat(input.getAttribute('data-step')) || 1,
+    min = parseFloat(input.getAttribute('data-min')) || undefined,
+    suffix = input.getAttribute('data-suffix') || '';
+
+    if (action == 'increase')
+      var newValue = parseFloat(input.getAttribute('data-value')) + step;
+    else if (action == 'decrease') {
+      var newValue = parseFloat(input.getAttribute('data-value')) - step;
+    }
+
+    if (newValue < min && min !== undefined)
+      newValue = min;
+
+    input.setAttribute('data-value', newValue);
+    input.value = newValue + suffix;
+  }
+}());
