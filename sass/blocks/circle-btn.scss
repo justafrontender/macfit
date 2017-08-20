@@ -1,0 +1,66 @@
+.circle-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  font-size: 0;
+  background-color: $popup-control-bg;
+  cursor: pointer;
+  @include pane-shadow;
+}
+
+.circle-btn--x {
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 48%;
+    left: 12.5%;
+    width: 75%;
+    height: 4%;
+    background-color: #776d42;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+}
+
+.circle-btn--plus {
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 48%;
+    left: 12.5%;
+    width: 75%;
+    height: 4%;
+    background-color: #776d42;
+  }
+
+  &::before {
+    transform: rotate(90deg);
+  }
+}
+
+.circle-btn--minus {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 48%;
+    left: 12.5%;
+    width: 75%;
+    height: 4%;
+    background-color: #776d42;
+  }
+}
+
+.circle-btn--small {
+  width: 24px;
+  height: 24px;
+}

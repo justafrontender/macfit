@@ -1,8 +1,15 @@
 .page-title {
-  font-size: 25px;
+  margin: 5px 0;
+  font-size: 20px;
   color: #777;
 
   &--hidden {
     @include visually-hidden;
+  }
+}
+
+@media #{$tablet-widths} {
+  .page-title {
+    font-size: 25px;
   }
 }

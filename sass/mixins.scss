@@ -52,6 +52,10 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, .14), 0 2px 4px rgba(0, 0, 0, .28);
 }
 
+@mixin light-shadow () {
+  box-shadow: 0 0 1px rgba(0, 0, 0, .14), 0 1px 2px rgba(0, 0, 0, .28);
+}
+
 @mixin brand-gradient ($size: 100px, $deg: 122deg, $desaturate: 0, $lighten: 0) {
   background-image: repeating-linear-gradient(
     $deg,

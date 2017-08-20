@@ -1,7 +1,23 @@
+.field-text {
+  padding: 10px 0;
+}
+
+.field-text__name {
+  display: block;
+}
+
 .field-text__input {
   display: block;
   width: 100%;
-  border: solid 0.5px gray;
+  height: 40px;
+  padding: 10px;
+  border: solid 2px gray;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  @include pane-shadow;
 }
 
 .field-text textarea {

@@ -1,0 +1,47 @@
+.radio {
+  flex-grow: 1;
+  margin: 5px 0;
+}
+
+.radio__input {
+  @include visually-hidden;
+}
+
+.radio__label {
+  display: block;
+  padding: 14px;
+  border: 0;
+  border-radius: 2px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  @include pane-shadow;
+}
+
+.radio__input:checked + .radio__label {
+  color: white;
+  background-color: #32ac62;
+}
+
+.radio__input:focus + .radio__label {
+  color: white;
+  background-color: lighten(#32ac62, 5);
+}
+
+@media #{$mobile-wide-widths} {
+  .radio {
+    flex-grow: 1;
+    max-width: 48%;
+  }
+}
+
+@media #{$tablet-widths} {
+  .radio {
+    flex-grow: 0;
+  }
+
+  .radio__label {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
