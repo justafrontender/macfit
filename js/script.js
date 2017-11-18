@@ -12,34 +12,6 @@
   menuToggler.addEventListener('click', menuToggle);
 }());
 
-// popup windows
-(function() {
-  var popup = document.querySelector('.popup');
-  var popupShade = document.querySelector('.popup-shade');
-  var popupOpeners = document.querySelectorAll('.js__open-popup');
-  var popupClosers = document.querySelectorAll('.popup-shade, .js__close-popup');
-
-  function popupOpen(e) {
-    e.preventDefault();
-    popup.classList.add('popup--visible');
-    popupShade.classList.add('popup-shade--visible');
-    document.body.classList.add('body-fixed');
-  }
-
-  function popupClose(e) {
-    e.preventDefault();
-    popup.classList.remove('popup--visible');
-    popupShade.classList.remove('popup-shade--visible');
-    document.body.classList.remove('body-fixed');
-  }
-
-  if (popup) {
-    for (var i = 0; i < popupOpeners.length; i++)
-      popupOpeners[i].addEventListener('click', popupOpen);
-    for (var i = 0; i < popupClosers.length; i++)
-      popupClosers[i].addEventListener('click', popupClose);
-  }
-}());
 
 // prevent page scrolling when popup opened on iOS
 // https://stackoverflow.com/questions/41594997/ios-10-safari-prevent-scrolling-behind-a-fixed-overlay-and-maintain-scroll-posi

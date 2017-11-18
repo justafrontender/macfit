@@ -3,9 +3,15 @@
   flex-direction: column;
 }
 
-.good-details__image img {
-  display: block;
-  width: 100%;
+.good-details__image {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+  }
 }
 
 .good-details__infopane {
