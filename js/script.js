@@ -1,22 +1,7 @@
-// dropdown menu
-(function() {
-  var menuContainer = document.querySelector('.main-nav__list');
-  var menuToggler = document.querySelector('.menu-toggler');
-
-  function menuToggle() {
-    menuContainer.classList.toggle('main-nav__list--visible');
-    menuToggler.classList.toggle('menu-toggler--close');
-  }
-
-  menuContainer.classList.remove('main-nav__list--nojs');
-  menuToggler.addEventListener('click', menuToggle);
-}());
-
-
 // prevent page scrolling when popup opened on iOS
 // https://stackoverflow.com/questions/41594997/ios-10-safari-prevent-scrolling-behind-a-fixed-overlay-and-maintain-scroll-posi
 (function () {
-  var _overlay = document.querySelector('.popup');
+  var _overlay = document.querySelector('.popup__inner');
   var _clientY = null; // remember Y position on touch start
 
   if (!_overlay)

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Logo from '../Logo';
+import MenuToggler from '../MenuToggler';
 import MainNav from '../MainNav';
 
 class PageHeader extends React.Component {
@@ -14,22 +16,16 @@ class PageHeader extends React.Component {
   }
 
   handleClick(e) {
-    this.setState({menuOpened: !this.state.menuOpened}, () => this.render());
+    this.setState({menuOpened: !this.state.menuOpened});
   }
 
   render() {
     return (
-      <header className='page-header'>
+      <header className='page-header page-header--fixed'>
         <div className='container page-header__container'>
-          <a className='logo'>
-            <img src='img/logo.svg' alt='MacFit'/>
-          </a>
-
-          <button className='menu-toggler' type='button' onClick={this.handleClick}>
-            <i></i>
-          </button>
-
-          <MainNav menuOpened={this.state.menuOpened} />
+          <Logo />
+          <MenuToggler clickHandler={this.handleClick} counter={this.props.basket.length} />
+          <MainNav menuItems={this.props.siteMenu} menuOpened={this.state.menuOpened} counter={this.props.basket.length} />
         </div>
       </header>
     );

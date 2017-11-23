@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import B from '../../B';
+import Counter from '../Counter';
+import B from '../../lib/B';
 
 let b = B.lock('main-nav');
 
-const MainNav = ({ menuOpened, links }) => {
+const MainNav = ({ menuOpened, menuItems, counter }) => {
   return (
     <nav className={b()}>
       <ul className={b('list', {visible: menuOpened})}>
-        {links.map((link, i) => (
+        {menuItems.map((link, i) => (
           <li key={`MainNav_${i}`}>
-            <a className='main-nav__link' href={link.href}>{link.name}</a>
+            <a className='main-nav__link' href={link.href}>
+              {link.name}
+              {link.counter? <Counter number={counter} classMix="main-nav__counter" />: ''}
+            </a>
           </li>
         ))}
       </ul>
@@ -20,23 +24,13 @@ const MainNav = ({ menuOpened, links }) => {
 
 MainNav.propTypes = {
   menuOpened: PropTypes.bool,
-  links: PropTypes.arrayOf(
+  menuItems: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      href: PropTypes.string
+      href: PropTypes.string,
+      counter: PropTypes.string
     })
-  )
-}
-
-MainNav.defaultProps = {
-  links: [
-    {name: 'Еда', href: '#'},
-    {name: 'Полуфабрикаты', href: '#'},
-    {name: 'Качество', href: '#'},
-    {name: 'Доставка и оплата', href: '#'},
-    {name: 'Кто мы', href: '#'},
-    {name: 'Контакты', href: '#'}
-  ]
+  ).isRequired
 }
 
 export default MainNav;

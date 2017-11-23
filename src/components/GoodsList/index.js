@@ -2,27 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GoodTile from '../GoodTile';
 
-class GoodsList extends React.Component {
-  constructor(props) {
-    super(props);
+const GoodsList = props => (
+  <section className='goods-list'>
+    <h2 className='goods-list__title'>{props.heading}</h2>
 
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <section className='goods-list'>
-        <h2 className='goods-list__title'>{this.props.heading}</h2>
-
-        {this.props.goods.map((item, i) => {
-          return (
-            <GoodTile good={item} key={i} onTitleClick={() => this.props.onOpenGoodDetails(i)} />
-          )
-        })}
-      </section>
-    );
-  }
-}
+    {props.goods.map((item, i) => {
+      return (
+        <GoodTile good={item} key={i} i={i} openDetails={props.openGoodDetails} />
+      )
+    })}
+  </section>
+);
 
 GoodsList.propTypes = {
   heading: PropTypes.string,
@@ -35,7 +25,7 @@ GoodsList.propTypes = {
       weight: PropTypes.number
     })
   ),
-  onOpenGoodDetails: PropTypes.func.isRequired
+  openGoodDetails: PropTypes.func.isRequired
 }
 
 GoodsList.defaultProps = {

@@ -17,6 +17,11 @@
   background: white;
   box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.5);
 
+  @supports (-webkit-backdrop-filter: blur()) {
+    background-color: rgba(255, 255, 255, 0.75);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
   &--nojs {
     position: relative;
     display: block;
@@ -39,9 +44,17 @@
 }
 
 .main-nav__link {
+  position: relative;
   display: block;
   padding: 15px 30px;
   font-weight: bold;
   text-decoration: none;
   color: $menu-color;
+}
+
+.main-nav__counter {
+  position: absolute;
+  padding: 2px 6px;
+  margin-top: -3px;
+  margin-left: 10px;
 }

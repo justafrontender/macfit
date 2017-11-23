@@ -1,6 +1,5 @@
 .good-details {
-  display: flex;
-  flex-direction: column;
+  overflow: scroll;
 }
 
 .good-details__image {
@@ -32,6 +31,7 @@
   .good-details {
     display: flex;
     flex-direction: row;
+    overflow: hidden;
   }
 
   .good-details__infopane {

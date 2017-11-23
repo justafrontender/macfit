@@ -2,4 +2,8 @@
   flex-grow: 1;
   padding-top: 15px;
   padding-bottom: 15px;
+
+  .page-header--fixed + & {
+    margin-top: 60px;
+  }
 }

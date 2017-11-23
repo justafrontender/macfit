@@ -1,8 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App'
-import goodsList from './data/goods';
+import catalogItems from './data/catalogItems';
+import deliveryTypes from './data/deliveryTypes';
+import orderData from './data/order';
+import siteMenu from './data/siteMenu';
+import './style.scss';
 
 document.addEventListener('DOMContentLoaded', function () {
-  ReactDOM.render(<App goodsList={goodsList}/>, document.getElementById('root'));
+  ReactDOM.render(
+    <App
+      goodsList={catalogItems}
+      deliveryTypes={deliveryTypes}
+      orderData={orderData}
+      siteMenu={siteMenu}
+    />,
+    document.getElementById('root')
+  );
 });
