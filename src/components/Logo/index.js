@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Logo = props => (
-  <a className='logo'>
-    <img src='img/logo.svg' alt='MacFit'/>
+const Logo = ({ href }) => (
+  <a className='logo' href={href}>
+    <img src='img/logo.svg' alt='MacFit' />
   </a>
 );
 

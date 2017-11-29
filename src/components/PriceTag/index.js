@@ -11,10 +11,10 @@ const PriceTag = ({ price, weight }) => (
 PriceTag.propTypes = {
   price: PropTypes.number.isRequired,
   weight: PropTypes.number
-}
+};
 
 PriceTag.defaultProps = {
   weight: 0
-}
+};
 
 export default PriceTag;

@@ -6,17 +6,17 @@ import RadioGroup from '../RadioGroup';
 import Radio from '../Radio';
 
 class Order extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <form className='order' method='post'>
         <div className='container container--space'>
           <h2>Ваш заказ</h2>
 
-          <Cart goods={this.props.goods} basket={this.props.basket} />
+          <Cart
+            basket={this.props.basket}
+            basketTotals={this.props.basketTotals}
+            onCartItemDelete={this.props.onCartItemDelete}
+          />
 
           <div className='order__fields'>
             <RadioGroup
@@ -24,11 +24,11 @@ class Order extends React.Component {
               name='deliveryType'
               onChange={this.props.onOrderFieldChange}
             >
-              {this.props.deliveryTypes.map((deliveryType, i) => (
+              {this.props.deliveryTypes.map(deliveryType => (
                 <Radio
-                  key={i}
+                  key={deliveryType.id}
                   value={deliveryType.id}
-                  checked={deliveryType.id == this.props.orderFields.deliveryType}
+                  checked={deliveryType.id === this.props.orderFields.deliveryType}
                 >
                   {deliveryType.name}
                 </Radio>
@@ -65,8 +65,8 @@ class Order extends React.Component {
 
 Order.propTypes = {
   deliveryTypes: PropTypes.arrayOf(PropTypes.shape({})),
-  orderFields: PropTypes.object,
-  basket: PropTypes.arrayOf(PropTypes.object),
+  orderFields: PropTypes.shape({}),
+  basket: PropTypes.arrayOf(PropTypes.shape({})),
   onOrderFieldChange: PropTypes.func.isRequired
 };
 

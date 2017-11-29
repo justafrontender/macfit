@@ -1,13 +1,20 @@
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const HtmlWebpackPlugin = require(`html-webpack-plugin`);
 
 const extractSass = new ExtractTextPlugin({
-    filename: "style.css",
+  filename: 'style.[contenthash].css'
+});
+
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
+  // favicon: 'src/static/favicon.ico',
+  filename: 'index.html',
+  template: 'src/static/index.html'
 });
 
 module.exports = {
   entry: [
-    'babel-polyfill',
     'react-hot-loader/patch',
     './src/index.js'
   ],
@@ -23,21 +30,26 @@ module.exports = {
         test: /\.scss$/,
         use: extractSass.extract({
           use: [{
-            loader: "css-loader"
+            loader: 'css-loader'
           }, {
-            loader: "sass-loader"
+            loader: 'sass-loader'
           }],
           // use style-loader in development
-          fallback: "style-loader"
+          fallback: 'style-loader'
         })
       },
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['es2015', 'react']
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015', 'react']
+            }
+          },
+          { loader: 'eslint-loader' },
+        ]
       },
       {
         test: /\.jpe?g|\.gif|\.png|\.ico|\.svg/,
@@ -61,14 +73,13 @@ module.exports = {
   },
 
   plugins: [
-    extractSass
-    // new webpack.NamedModulesPlugin(),
-    // new webpack.HotModuleReplacementPlugin()
+    extractSass,
+    htmlWebpackPlugin
   ],
 
   devtool: 'cheap-eval-source-map',
 
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.scss', '*']
+    extensions: ['.js', '.json', '.scss', '*']
   }
 };

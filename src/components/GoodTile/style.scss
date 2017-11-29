@@ -44,10 +44,10 @@
   width: 30px;
   min-height: 30px;
   border: 0;
-  border-left: solid 1px lightgray;
   font-size: 0;
   color: transparent;
   background: transparent;
+  border-radius: 0;
   cursor: pointer;
 
   &::before {
@@ -57,7 +57,7 @@
     left: 4px;
     right: 4px;
     bottom: 4px;
-    background: url('../img/icon-cart.svg') 50% no-repeat;
+    background: url('components/GoodTile/img/plus.svg') 50% no-repeat;
   }
 }
 

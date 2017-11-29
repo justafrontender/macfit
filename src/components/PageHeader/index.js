@@ -10,13 +10,13 @@ class PageHeader extends React.Component {
 
     this.state = {
       menuOpened: this.props.menuOpenedInitially
-    }
+    };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
-    this.setState({menuOpened: !this.state.menuOpened});
+  handleClick() {
+    this.setState({ menuOpened: !this.state.menuOpened });
   }
 
   render() {
@@ -24,8 +24,12 @@ class PageHeader extends React.Component {
       <header className='page-header page-header--fixed'>
         <div className='container page-header__container'>
           <Logo />
-          <MenuToggler clickHandler={this.handleClick} counter={this.props.basket.length} />
-          <MainNav menuItems={this.props.siteMenu} menuOpened={this.state.menuOpened} counter={this.props.basket.length} />
+          <MenuToggler clickHandler={this.handleClick} counter={this.props.basketItems} />
+          <MainNav
+            menuItems={this.props.siteMenu}
+            menuOpened={this.state.menuOpened}
+            counter={this.props.basketItems}
+          />
         </div>
       </header>
     );
@@ -34,10 +38,10 @@ class PageHeader extends React.Component {
 
 PageHeader.propTypes = {
   menuOpenedInitially: PropTypes.bool
-}
+};
 
 PageHeader.defaultProps = {
   menuOpenedInitially: false
-}
+};
 
 export default PageHeader;

@@ -1,21 +1,25 @@
 const order = {
   basket: [
     {
+      id: 911,
       productId: 1,
       quantity: 2,
       options: null
     },
     {
+      id: 912,
       productId: 5,
       quantity: 2,
       options: null
     },
     {
+      id: 913,
       productId: 4,
       quantity: 10,
       options: null
     },
     {
+      id: 914,
       productId: 3,
       quantity: 1,
       options: null
@@ -27,6 +31,6 @@ const order = {
     note: 'С кровью, пожалуйста',
     deliveryType: 'delivery_fast'
   }
-}
+};
 
 export default order;

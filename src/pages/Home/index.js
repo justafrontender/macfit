@@ -1,14 +1,14 @@
 import React from 'react';
 import find from 'lodash/find';
-import PageHeader from '../PageHeader';
-import PageContent from '../PageContent';
-import PageFooter from '../PageFooter';
-import Popup from '../Popup';
-import GoodsList from '../GoodsList';
-import GoodDetails from '../GoodDetails';
-import Order from '../order';
+import PageHeader from '../../components/PageHeader';
+import PageContent from '../../components/PageContent';
+import PageFooter from '../../components/PageFooter';
+import Popup from '../../components/Popup';
+import GoodsList from '../../components/GoodsList';
+import GoodDetails from '../../components/GoodDetails';
+import Order from '../../components/Order';
 
-class App extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
 
@@ -160,4 +160,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Home;

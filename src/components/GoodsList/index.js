@@ -8,28 +8,32 @@ const GoodsList = props => (
 
     {props.goods.map((item, i) => {
       return (
-        <GoodTile good={item} key={i} i={i} openDetails={props.openGoodDetails} />
-      )
+        <GoodTile
+          good={item}
+          key={item.id}
+          i={i}
+          openDetails={props.openGoodDetails}
+          onAddToCart={props.onAddToCart}
+        />
+      );
     })}
   </section>
 );
 
 GoodsList.propTypes = {
   heading: PropTypes.string,
-  goods: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
-      price: PropTypes.number.isRequired,
-      weight: PropTypes.number
-    })
-  ),
+  goods: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
+    price: PropTypes.number.isRequired,
+    weight: PropTypes.number
+  })),
   openGoodDetails: PropTypes.func.isRequired
-}
+};
 
 GoodsList.defaultProps = {
   heading: 'Меню MacFit',
-}
+};
 
 export default GoodsList;

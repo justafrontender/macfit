@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Popup extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentWillMount() {
     document.body.classList.add('body-fixed');
   }

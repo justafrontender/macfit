@@ -1,9 +1,9 @@
 import React from 'react';
 
-const GoodDetails = ({ content, closePopup }) => (
+const GoodDetails = ({ content }) => (
   <section className='good-details'>
     <div className='good-details__image'>
-      <img src={content.pictures[0]} alt={content.name} width='100%'/>
+      <img src={content.pictures[0]} alt={content.name} width='100%' />
     </div>
 
     <div className='good-details__infopane'>
@@ -14,10 +14,16 @@ const GoodDetails = ({ content, closePopup }) => (
       </div>
 
       <div className='good-details__description'>
-        <p dangerouslySetInnerHTML={{__html: content.description}}></p>
+        <p>{content.description}</p>
       </div>
 
-      <button className='btn btn--to-cart good-details__cart-btn' type='button' title='Добавить в заказ'>Добавить в заказ</button>
+      <button
+        className='btn btn--to-cart good-details__cart-btn'
+        type='button'
+        title='Добавить в заказ'
+      >
+        Добавить в заказ
+      </button>
     </div>
   </section>
 );

@@ -7,6 +7,11 @@ class GoodTile extends React.Component {
   constructor(props) {
     super(props);
     this.openDetails = this.openDetails.bind(this);
+    this.onAddToCart = this.onAddToCart.bind(this);
+  }
+
+  onAddToCart() {
+    this.props.onAddToCart(this.props.good.id);
   }
 
   openDetails(e) {
@@ -22,14 +27,20 @@ class GoodTile extends React.Component {
           tabIndex='-1'
           onClick={this.openDetails}
         >
-          <img src={this.props.good.pictures[0]} alt={this.props.good.name}/>
+          <img src={this.props.good.pictures[0]} alt={`Фотография ${this.props.good.name}`} />
         </a>
         <div className='good-tile__specs'>
           <h3 className='good-tile__title'>
             <a href='#' onClick={this.openDetails}>{this.props.good.name}</a>
           </h3>
           <PriceTag price={this.props.good.price} weight={this.props.good.weight} />
-          <Button className='good-tile__basket-btn' title='Добавить в заказ'>Добавить в заказ</Button>
+          <Button
+            className='good-tile__basket-btn'
+            title='Добавить в заказ'
+            onClick={this.onAddToCart}
+          >
+            Добавить в заказ
+          </Button>
         </div>
       </article>
     );
@@ -37,9 +48,9 @@ class GoodTile extends React.Component {
 }
 
 GoodTile.propTypes = {
-  good: PropTypes.object.isRequired,
+  good: PropTypes.shape({}).isRequired,
   openDetails: PropTypes.func.isRequired,
   i: PropTypes.number
-}
+};
 
 export default GoodTile;

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Counter = ({ number, classMix }) =>
-  number? <span className={`counter ${classMix}`}>{number}</span>: '';
+const Counter = ({ number, classMix }) => {
+  return number ? <span className={`counter ${classMix}`}>{number}</span> : '';
+};
 
 Counter.propTypes = {
   number: PropTypes.number,
@@ -11,6 +12,6 @@ Counter.propTypes = {
 
 Counter.defaultProps = {
   classMix: ''
-}
+};
 
 export default Counter;
