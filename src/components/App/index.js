@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import find from 'lodash/find';
 import PageHeader from '../PageHeader';
 import PageContent from '../PageContent';
@@ -6,7 +7,8 @@ import PageFooter from '../PageFooter';
 import Popup from '../Popup';
 import GoodsList from '../GoodsList';
 import GoodDetails from '../GoodDetails';
-import Order from '../order';
+import Order from '../Order';
+// import Home from '../../pages/Home/';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,7 +30,6 @@ class App extends React.Component {
     this.state.basketTotals = this.getBasketTotals(this.state.basket);
 
     this.openGoodDetails = this.openGoodDetails.bind(this);
-    this.openOrderPopup = this.openOrderPopup.bind(this);
     this.closePopup = this.closePopup.bind(this);
     this.updateOrderField = this.updateOrderField.bind(this);
     this.handleCartItemDelete = this.handleCartItemDelete.bind(this);
@@ -52,10 +53,6 @@ class App extends React.Component {
       openedPopup: 'good',
       popupContent: this.props.goodsList[key]
     });
-  }
-
-  openOrderPopup() {
-    this.setState({ openedPopup: 'order' });
   }
 
   closePopup() {
@@ -118,44 +115,53 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <PageHeader siteMenu={this.props.siteMenu} basketItems={this.state.basketTotals.items} />
+      <Router>
+        <div>
+          <PageHeader siteMenu={this.props.siteMenu} basketItems={this.state.basketTotals.items} />
 
-        <PageContent>
-          <GoodsList
-            goods={this.props.goodsList}
-            openGoodDetails={this.openGoodDetails}
-            onAddToCart={this.handleAddToCart}
-          />
-        </PageContent>
-
-        <PageFooter />
-
-        <button onClick={this.openOrderPopup} type='button'>Order</button>
-
-        {
-          (this.state.openedPopup === 'good') &&
-          <Popup closePopup={this.closePopup}>
-            <GoodDetails content={this.state.popupContent} />
-          </Popup>
-        }
-
-        {
-          (this.state.openedPopup === 'order') &&
-          <Popup closePopup={this.closePopup}>
-            <Order
-              goods={this.props.goodsList}
-              deliveryTypes={this.props.deliveryTypes}
-              orderFields={this.state.orderFields}
-              basket={this.state.basket}
-              basketTotals={this.state.basketTotals}
-              onOrderFieldChange={this.updateOrderField}
-              onCartItemDelete={this.handleCartItemDelete}
+          <PageContent>
+            <Route
+              exact
+              path='/'
+              render={() => {
+                return (
+                  <GoodsList
+                    goods={this.props.goodsList}
+                    openGoodDetails={this.openGoodDetails}
+                    onAddToCart={this.handleAddToCart}
+                  />
+                );
+              }}
             />
-          </Popup>
-        }
+            <Route
+              path='/order/'
+              render={() => {
+                return (
+                  <Order
+                    goods={this.props.goodsList}
+                    deliveryTypes={this.props.deliveryTypes}
+                    orderFields={this.state.orderFields}
+                    basket={this.state.basket}
+                    basketTotals={this.state.basketTotals}
+                    onOrderFieldChange={this.updateOrderField}
+                    onCartItemDelete={this.handleCartItemDelete}
+                  />
+                );
+              }}
+            />
+          </PageContent>
 
-      </div>
+          <PageFooter />
+
+          {
+            (this.state.openedPopup === 'good') &&
+            <Popup closePopup={this.closePopup}>
+              <GoodDetails content={this.state.popupContent} />
+            </Popup>
+          }
+
+        </div>
+      </Router>
     );
   }
 }

@@ -7,6 +7,29 @@
   <title>MacFit - фастфуд, который можно</title>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <style>
+    body {
+      margin: 0;
+    }
+
+    #root {
+      min-height: 100vh;
+      animation-name: bg;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes bg {
+      0% { background-color: #32ac62; }
+
+      50% { background-color: #a07c58; }
+
+      100% { background-color: #eeaa41; }
+    }
+    </style>
+  </div>
 </body>
 </html>

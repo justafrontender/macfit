@@ -20,7 +20,9 @@ module.exports = {
   ],
 
   output: {
-    filename: 'bundle.js',
+    publicPath: '/',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].[chunkhash:6].js',
     path: path.resolve(__dirname, 'public'),
   },
 
@@ -69,7 +71,8 @@ module.exports = {
 
   devServer: {
     contentBase: './build',
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
 
   plugins: [

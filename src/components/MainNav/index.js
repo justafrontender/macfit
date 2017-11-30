@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import B from '../../lib/B';
 import hash from '../../lib/hash';
@@ -12,10 +13,10 @@ const MainNav = ({ menuOpened, menuItems, counter }) => {
       <ul className={b('list', { visible: menuOpened })}>
         {menuItems.map(link => (
           <li key={hash(link.name)}>
-            <a className='main-nav__link' href={link.href}>
+            <Link className='main-nav__link' to={link.href}>
               {link.name}
               {link.counter ? <Counter number={counter} classMix='main-nav__counter' /> : ''}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

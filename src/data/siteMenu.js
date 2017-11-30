@@ -1,6 +1,6 @@
 const siteMenu = [
-  { name: 'Ваш заказ', href: '#', counter: 'basket' },
-  { name: 'Еда', href: '#' },
+  { name: 'Ваш заказ', href: '/order', counter: 'basket' },
+  { name: 'Еда', href: '/' },
   { name: 'Полуфабрикаты', href: '#' },
   { name: 'Качество', href: '#' },
   { name: 'Доставка и оплата', href: '#' },

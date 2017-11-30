@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Logo = ({ href }) => (
-  <a className='logo' href={href}>
+const Logo = () => (
+  <Link className='logo' to='/'>
     <img src='img/logo.svg' alt='MacFit' />
-  </a>
+  </Link>
 );
 
 export default Logo;
