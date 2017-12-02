@@ -8,18 +8,33 @@
 </head>
 <body>
   <div id="root">
+    <div class="preloader"></div>
     <style>
     body {
       margin: 0;
     }
 
     #root {
+      display: flex;
       min-height: 100vh;
-      animation-name: bg;
-      animation-duration: 1.5s;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .preloader {
+      width: 75vmin;
+      height: 75vmin;
+      max-width: 250px;
+      max-height: 250px;
+      border-radius: 50%;
+      animation-name: initialZoom, bg, zoom;
+      animation-duration: 0.5s, 2.5s, 1.2s;
+      animation-delay: 0s, 0s, 0.5s;
+      -webkit-animation-delay: 0s, 0s, 0.5s;
       animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1, infinite, infinite;
+      animation-direction: normal, alternate, alternate;
     }
 
     @keyframes bg {
@@ -28,6 +43,26 @@
       50% { background-color: #a07c58; }
 
       100% { background-color: #eeaa41; }
+    }
+
+    @keyframes initialZoom {
+      from {
+        transform: scale(0);
+      }
+
+      to {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(1.1);
+      }
+
+      to {
+        transform: scale(1);
+      }
     }
     </style>
   </div>

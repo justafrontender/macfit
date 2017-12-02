@@ -12,7 +12,7 @@ class PageHeader extends React.Component {
       menuOpened: this.props.menuOpenedInitially
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.menuToggle = this.handleClick.bind(this);
   }
 
   handleClick() {
@@ -24,10 +24,11 @@ class PageHeader extends React.Component {
       <header className='page-header page-header--fixed'>
         <div className='container page-header__container'>
           <Logo />
-          <MenuToggler clickHandler={this.handleClick} counter={this.props.basketItems} />
+          <MenuToggler onClick={this.menuToggle} counter={this.props.basketItems} />
           <MainNav
             menuItems={this.props.siteMenu}
             menuOpened={this.state.menuOpened}
+            onClick={this.menuToggle}
             counter={this.props.basketItems}
           />
         </div>

@@ -27,7 +27,7 @@ const PageFooter = () => (
               rel='noopener noreferrer'
             >
               <svg>
-                <use xlinkHref='img/sprite.svg#icon-vk' />
+                <use xlinkHref='/img/sprite.svg#icon-vk' />
               </svg>
               Вконтакте
             </a>
@@ -41,7 +41,7 @@ const PageFooter = () => (
               rel='noopener noreferrer'
             >
               <svg>
-                <use xlinkHref='img/sprite.svg#icon-fb' />
+                <use xlinkHref='/img/sprite.svg#icon-fb' />
               </svg>
               Facebook
             </a>
@@ -55,7 +55,7 @@ const PageFooter = () => (
               rel='noopener noreferrer'
             >
               <svg>
-                <use xlinkHref='img/sprite.svg#icon-insta' />
+                <use xlinkHref='/img/sprite.svg#icon-insta' />
               </svg>
               Instagram
             </a>

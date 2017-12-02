@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Router from 'react-router-dom/BrowserRouter';
 import App from './components/App';
 import catalogItems from './data/catalogItems';
 import deliveryTypes from './data/deliveryTypes';
@@ -11,12 +12,14 @@ document.addEventListener(
   'DOMContentLoaded',
   () => {
     ReactDOM.render(
-      <App
-        goodsList={catalogItems}
-        deliveryTypes={deliveryTypes}
-        orderData={orderData}
-        siteMenu={siteMenu}
-      />,
+      <Router>
+        <App
+          goodsList={catalogItems}
+          deliveryTypes={deliveryTypes}
+          orderData={orderData}
+          siteMenu={siteMenu}
+        />
+      </Router>,
       document.getElementById('root')
     );
   }

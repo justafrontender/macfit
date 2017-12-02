@@ -6,13 +6,11 @@ const GoodsList = props => (
   <section className='goods-list'>
     <h2 className='goods-list__title'>{props.heading}</h2>
 
-    {props.goods.map((item, i) => {
+    {props.goods.map(item => {
       return (
         <GoodTile
           good={item}
           key={item.id}
-          i={i}
-          openDetails={props.openGoodDetails}
           onAddToCart={props.onAddToCart}
         />
       );
@@ -28,8 +26,7 @@ GoodsList.propTypes = {
     pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
     price: PropTypes.number.isRequired,
     weight: PropTypes.number
-  })),
-  openGoodDetails: PropTypes.func.isRequired
+  }))
 };
 
 GoodsList.defaultProps = {

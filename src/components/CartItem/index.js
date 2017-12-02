@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'react-router-dom/Link';
 
 class CartItem extends React.Component {
   constructor(props) {
@@ -14,12 +15,17 @@ class CartItem extends React.Component {
   render() {
     return (
       <li className='cart-item'>
-        <a className='cart-item__image' tabIndex='-1'>
+        <Link className='cart-item__image' to={`/product/${this.props.basketItem.good.code}`} tabIndex='-1'>
           <img src={this.props.basketItem.good.pictures[0]} alt={this.props.basketItem.good.name} />
-        </a>
+        </Link>
 
         <div className='cart-item__specs'>
-          <a className='cart-item__title'>{this.props.basketItem.good.name}</a>
+          <Link
+            className='cart-item__title'
+            to={`/product/${this.props.basketItem.good.code}`}
+          >
+            {this.props.basketItem.good.name}
+          </Link>
           <div className='price-tag'>
             <span className='price-tag__price'>{this.props.basketItem.good.price}р.</span>
             <span className='price-tag__weight'>{this.props.basketItem.good.weight}гр.</span>

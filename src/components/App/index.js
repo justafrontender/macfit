@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import find from 'lodash/find';
 import PageHeader from '../PageHeader';
 import PageContent from '../PageContent';
@@ -8,7 +8,6 @@ import Popup from '../Popup';
 import GoodsList from '../GoodsList';
 import GoodDetails from '../GoodDetails';
 import Order from '../Order';
-// import Home from '../../pages/Home/';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,10 +26,9 @@ class App extends React.Component {
         return basketItem;
       }),
     };
+
     this.state.basketTotals = this.getBasketTotals(this.state.basket);
 
-    this.openGoodDetails = this.openGoodDetails.bind(this);
-    this.closePopup = this.closePopup.bind(this);
     this.updateOrderField = this.updateOrderField.bind(this);
     this.handleCartItemDelete = this.handleCartItemDelete.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
@@ -45,21 +43,6 @@ class App extends React.Component {
       },
       { items: 0, price: 0 }
     );
-  }
-
-  openGoodDetails(event, key) {
-    event.preventDefault();
-    this.setState({
-      openedPopup: 'good',
-      popupContent: this.props.goodsList[key]
-    });
-  }
-
-  closePopup() {
-    this.setState({
-      openedPopup: false,
-      popupContent: undefined
-    });
   }
 
   updateOrderField(event) {
@@ -120,23 +103,21 @@ class App extends React.Component {
           <PageHeader siteMenu={this.props.siteMenu} basketItems={this.state.basketTotals.items} />
 
           <PageContent>
-            <Route
-              exact
-              path='/'
-              render={() => {
-                return (
+            <Switch>
+              <Route
+                exact
+                path='/'
+                render={() => (
                   <GoodsList
                     goods={this.props.goodsList}
-                    openGoodDetails={this.openGoodDetails}
                     onAddToCart={this.handleAddToCart}
                   />
-                );
-              }}
-            />
-            <Route
-              path='/order/'
-              render={() => {
-                return (
+                )}
+              />
+
+              <Route
+                path='/order/'
+                render={() => (
                   <Order
                     goods={this.props.goodsList}
                     deliveryTypes={this.props.deliveryTypes}
@@ -146,19 +127,38 @@ class App extends React.Component {
                     onOrderFieldChange={this.updateOrderField}
                     onCartItemDelete={this.handleCartItemDelete}
                   />
-                );
-              }}
-            />
+                )}
+              />
+
+              <Route
+                path='/product/:productCode/'
+                render={() => (
+                  <GoodsList
+                    goods={this.props.goodsList}
+                    onAddToCart={this.handleAddToCart}
+                  />
+                )}
+              />
+
+              <Route
+                render={() => <Redirect to='/' />}
+              />
+            </Switch>
           </PageContent>
 
           <PageFooter />
 
-          {
-            (this.state.openedPopup === 'good') &&
-            <Popup closePopup={this.closePopup}>
-              <GoodDetails content={this.state.popupContent} />
-            </Popup>
-          }
+          <Route
+            path='/product/:productCode/'
+            render={props => (
+              <Popup history={props.history}>
+                <GoodDetails
+                  goods={this.props.goodsList}
+                  {...props}
+                />
+              </Popup>
+            )}
+          />
 
         </div>
       </Router>
@@ -166,4 +166,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

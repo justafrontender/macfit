@@ -50,6 +50,10 @@
   font-weight: bold;
   text-decoration: none;
   color: $menu-color;
+
+  &--active {
+    background-color: rgba(#32ac62, 0.2);
+  }
 }
 
 .main-nav__counter {
