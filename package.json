@@ -53,7 +53,7 @@
     "webpack-dev-server": "^2.8.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --host 0.0.0.0",
+    "start": "webpack-dev-server --hot --host 0.0.0.0",
     "build": "webpack -p",
     "test": "editorconfig-cli",
     "gulpbuild": "gulp build",
