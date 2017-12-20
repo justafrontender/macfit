@@ -44,7 +44,6 @@
     "import/extensions"                       : ["off"],
     "import/no-extraneous-dependencies"       : ["off"],
     "import/no-unresolved"                    : ["off"],
-    "jsx-a11y/no-static-element-interactions" : ["off"],
     "linebreak-style"                         : ["off"],
     "no-param-reassign"                       : ["off"],
     "react/no-find-dom-node"                  : ["off"],
