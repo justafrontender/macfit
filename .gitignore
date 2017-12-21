@@ -11,5 +11,5 @@ css/*.css
 node_modules/
 Thumbs.db
 sources/
-build/
+static/
 public/
