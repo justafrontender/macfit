@@ -7,6 +7,7 @@ import deliveryTypes from './data/deliveryTypes';
 import orderData from './data/order';
 import siteMenu from './data/siteMenu';
 import './style.scss';
+import './favicons';
 
 document.addEventListener(
   'DOMContentLoaded',
