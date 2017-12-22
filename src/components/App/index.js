@@ -35,9 +35,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/catalog')
-      .then(response => response.json())
-      .then(catalog => console.log(catalog));
+    // fetch('/api/catalog')
+    //   .then(response => response.json())
+    //   .then(catalog => console.log(catalog));
   }
 
   getBasketTotals(basket) {
