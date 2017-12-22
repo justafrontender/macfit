@@ -7,8 +7,7 @@ import deliveryTypes from './data/deliveryTypes';
 import orderData from './data/order';
 import siteMenu from './data/siteMenu';
 import './style.scss';
-// eslint-disable-next-line
-import '!dir-loader!./favicons/config.js';
+import './favicons';
 
 document.addEventListener(
   'DOMContentLoaded',
