@@ -9,6 +9,9 @@ import siteMenu from './data/siteMenu';
 import './style.scss';
 import './favicons';
 
+// temporarely include backend stub
+import './static/api';
+
 document.addEventListener(
   'DOMContentLoaded',
   () => {
