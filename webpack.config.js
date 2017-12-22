@@ -70,7 +70,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: './build',
+    contentBase: './static',
     hot: true,
     historyApiFallback: true
   },
