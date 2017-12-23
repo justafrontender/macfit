@@ -18,7 +18,7 @@ class GoodTile extends React.Component {
     return (
       <article className='good-tile' data-id={this.props.good.id}>
         <Link
-          className='good-tile__image'
+          className='good-tile__link'
           to={`/product/${this.props.good.code}`}
           tabIndex='-1'
         >

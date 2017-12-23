@@ -2,17 +2,32 @@
   display: flex;
   flex-direction: column;
   width: 48%;
-  margin: 8px 0;
+  margin: 8px 0 8px 4%;
   box-sizing: border-box;
   border-radius: 2px;
   @include light-shadow;
+
+  &:last-of-type {
+    margin-right: auto;
+  }
 }
 
-.good-tile__image {
+.good-tile__link {
+  position: relative;
   width: 100%;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+  }
 }
 
-.good-tile__image img {
+.good-tile__link img {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
   width: 100%;
   border-radius: 2px 2px 0 0;
@@ -61,9 +76,22 @@
   }
 }
 
+@media #{$mobile-vertical-only} {
+  .good-tile {
+    &:nth-of-type(2n+1) {
+      margin-left: 0;
+    }
+  }
+}
+
 @media #{$mobile-wide-widths} {
   .good-tile {
     width: 31%;
+    margin-left: 3.5%;
+
+    &:nth-of-type(3n+1) {
+      margin-left: 0;
+    }
   }
 
   .good-tile__basket-btn {
@@ -73,6 +101,7 @@
 
 @media #{$tablet-widths} {
   .good-tile {
-    margin: 15px 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 }
