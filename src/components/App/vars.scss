@@ -1,3 +1,4 @@
+// color presets
 $primary-text-color: #444;
 $menu-color: #000;
 $link-color: #003569;
@@ -5,14 +6,23 @@ $popup-border-color: gray;
 $primary-text-color: #000;
 $popup-control-bg: white;
 
+// screen widths
 $mobile-min-width: 320px;
 $desktop-width: 1000px;
+
+// media queries
+$mobile-vertical-only: #{'(max-width: 567px)'};
 $mobile-wide-widths: #{'(min-width: 568px)'};
-$tablet-widths: #{'(min-width: 768px)'};
-$desktop-widths: #{'(min-width: 1000px)'};
+$mobile-wide-only: #{'(min-width: 568px) and (max-width: 767px)'};
 $mobile-only: #{'(max-width: 767px)'};
+
 $tablet-only: #{'(min-width: 768px) and (max-width: 999px)'};
+$tablet-widths: #{'(min-width: 768px)'};
+
+$desktop-widths: #{'(min-width: 1000px)'};
+
 $retina: #{'(min-resolution: 144dpi), (min-resolution: 1.5dppx)'};
 
+// z-indexes
 $menu-z-index: 10;
 $popup-z-index: 15;
