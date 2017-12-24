@@ -55,7 +55,7 @@
   "scripts": {
     "start": "webpack-dev-server -d --hot --host 0.0.0.0",
     "build": "rm -rf public && webpack -p",
-    "test": "editorconfig-cli && eslint src",
+    "test": "rm -rf public && webpack -p",
     "gulpbuild": "gulp build"
   },
   "editorconfig-cli": [
