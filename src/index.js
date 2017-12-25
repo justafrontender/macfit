@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from 'react-router-dom/BrowserRouter';
+import { createStore } from 'redux';
+// import { Provider } from 'react-redux';
+import cartReducer from './reducers/cart';
 import App from './components/App';
 import deliveryTypes from './data/deliveryTypes';
 import orderData from './data/order';
@@ -11,6 +14,8 @@ import './favicons';
 // temporarely include backend stub
 import './static/api';
 
+const cartStore = createStore(cartReducer, [{ productId: 1, quantity: 10 }]);
+
 document.addEventListener(
   'DOMContentLoaded',
   () => {
@@ -20,9 +25,10 @@ document.addEventListener(
         ReactDOM.render(
           <Router>
             <App
-              goodsList={catalog}
+              catalog={catalog}
               deliveryTypes={deliveryTypes}
-              orderData={orderData}
+              cart={cartStore}
+              orderFields={orderData}
               siteMenu={siteMenu}
             />
           </Router>,

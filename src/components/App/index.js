@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import find from 'lodash/find';
+import { addItem, changeQuantity, deleteItem } from '../../actions/cart';
 import PageHeader from '../PageHeader';
 import PageContent from '../PageContent';
 import PageFooter from '../PageFooter';
@@ -14,31 +15,37 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      orderFields: this.props.orderData.fields,
-      basket: this.props.orderData.basket.map(basketItem => {
-        const good = find(this.props.goodsList, ['id', basketItem.productId]);
-        if (good) {
-          basketItem.good = good;
-        }
-        else {
-          // Написать удаление из корзины, если товар был удален из каталога
-        }
-        return basketItem;
-      }),
+      orderFields: this.props.orderFields,
+      basket: this.props.cart.getState() === undefined ? [] : this.props.cart.getState(),
+      basketTotals: this.getBasketTotals()
     };
-
-    this.state.basketTotals = this.getBasketTotals(this.state.basket);
 
     this.updateOrderField = this.updateOrderField.bind(this);
     this.handleCartItemDelete = this.handleCartItemDelete.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
   }
 
-  getBasketTotals(basket) {
+  componentDidMount() {
+    this.unsubscribeCartStore = this.props.cart.subscribe(() => {
+      this.setState({
+        basket: this.props.cart.getState(),
+        basketTotals: this.getBasketTotals()
+      });
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeCartStore();
+  }
+
+  getBasketTotals() {
+    const basket = this.props.cart.getState() === undefined ? [] : this.props.cart.getState();
     return basket.reduce(
       (sum, item) => {
+        const good = find(this.props.catalog, i => i.id === item.productId);
         sum.items += item.quantity;
-        sum.price += item.good.price * item.quantity;
+        sum.price += good.price * item.quantity;
         return sum;
       },
       { items: 0, price: 0 }
@@ -54,46 +61,16 @@ class App extends React.Component {
     });
   }
 
-  handleCartItemDelete(id) {
-    this.setState(prevState => {
-      prevState.basket = prevState.basket.filter(item => item.id !== id);
-      return {
-        basket: prevState.basket,
-        basketTotals: this.getBasketTotals(prevState.basket)
-      };
-    });
+  handleCartItemDelete(productId) {
+    this.props.cart.dispatch(deleteItem(productId));
   }
 
   handleAddToCart(productId) {
-    this.setState(prevState => {
-      let goodInBasket = false;
+    this.props.cart.dispatch(addItem(productId, 1));
+  }
 
-      prevState.basket = prevState.basket.map(item => {
-        if (item.productId === productId) {
-          item.quantity++;
-          goodInBasket = true;
-        }
-        return item;
-      });
-
-      const newId = prevState.basket.length ? prevState.basket[prevState.basket.length - 1].id + 1 : 1;
-
-      if (!goodInBasket) {
-        prevState.basket.push({
-          id: newId,
-          productId,
-          quantity: 1,
-          options: null,
-          good: find(this.props.goodsList, ['id', productId])
-        });
-      }
-
-      return {
-        basket: prevState.basket,
-        basketTotals: this.getBasketTotals(prevState.basket)
-      };
-    });
-    // иначе добавляем товар в корзину
+  handleChangeQuantity(productId, amount) {
+    this.props.cart.dispatch(changeQuantity(productId, amount));
   }
 
   render() {
@@ -109,7 +86,7 @@ class App extends React.Component {
                 path='/'
                 render={() => (
                   <GoodsList
-                    goods={this.props.goodsList}
+                    goods={this.props.catalog}
                     onAddToCart={this.handleAddToCart}
                   />
                 )}
@@ -119,13 +96,14 @@ class App extends React.Component {
                 path='/order/'
                 render={() => (
                   <Order
-                    goods={this.props.goodsList}
+                    goods={this.props.catalog}
                     deliveryTypes={this.props.deliveryTypes}
                     orderFields={this.state.orderFields}
                     basket={this.state.basket}
                     basketTotals={this.state.basketTotals}
                     onOrderFieldChange={this.updateOrderField}
                     onCartItemDelete={this.handleCartItemDelete}
+                    onCartChangeQuantity={this.handleChangeQuantity}
                   />
                 )}
               />
@@ -134,7 +112,7 @@ class App extends React.Component {
                 path='/product/:productCode/'
                 render={() => (
                   <GoodsList
-                    goods={this.props.goodsList}
+                    goods={this.props.catalog}
                     onAddToCart={this.handleAddToCart}
                   />
                 )}
@@ -153,7 +131,7 @@ class App extends React.Component {
             render={props => (
               <Popup history={props.history}>
                 <GoodDetails
-                  goods={this.props.goodsList}
+                  goods={this.props.catalog}
                   {...props}
                 />
               </Popup>

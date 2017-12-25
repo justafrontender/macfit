@@ -13,9 +13,11 @@ class Order extends React.Component {
         <PageTitle>Ваш заказ</PageTitle>
 
         <Cart
+          goods={this.props.goods}
           basket={this.props.basket}
           basketTotals={this.props.basketTotals}
           onCartItemDelete={this.props.onCartItemDelete}
+          onCartChangeQuantity={this.props.onCartChangeQuantity}
         />
 
         <div className='order__fields'>

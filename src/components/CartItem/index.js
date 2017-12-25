@@ -6,10 +6,20 @@ class CartItem extends React.Component {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleIncreaseQuantity = this.handleIncreaseQuantity.bind(this);
+    this.handleDecreaseQuantity = this.handleDecreaseQuantity.bind(this);
   }
 
   handleDelete() {
-    this.props.onDelete(this.props.basketItem.id);
+    this.props.onDelete(this.props.basketItem.productId);
+  }
+
+  handleIncreaseQuantity() {
+    this.props.onChangeQuantity(this.props.basketItem.productId, 1);
+  }
+
+  handleDecreaseQuantity() {
+    this.props.onChangeQuantity(this.props.basketItem.productId, -1);
   }
 
   render() {
@@ -57,6 +67,7 @@ class CartItem extends React.Component {
             data-action='decrease'
             title='Уменьшить количество'
             tabIndex='-1'
+            onClick={this.handleDecreaseQuantity}
           >
             -
           </button>
@@ -66,6 +77,7 @@ class CartItem extends React.Component {
             data-action='increase'
             title='Увеличить количество'
             tabIndex='-1'
+            onClick={this.handleIncreaseQuantity}
           >
             +
           </button>

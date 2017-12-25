@@ -1,16 +1,23 @@
 import React from 'react';
+import find from 'lodash/find';
 import CartItem from '../CartItem';
 
 class Cart extends React.Component {
   render() {
+    const basket = this.props.basket.map(basketItem => {
+      basketItem.good = find(this.props.goods, ['id', basketItem.productId]);
+      return basketItem;
+    });
+
     return (
       <div className='cart'>
         <ul className='cart__list'>
-          {this.props.basket.map(basketItem => (
+          {basket.map(basketItem => (
             <CartItem
               basketItem={basketItem}
-              key={basketItem.id}
+              key={basketItem.productId}
               onDelete={this.props.onCartItemDelete}
+              onChangeQuantity={this.props.onCartChangeQuantity}
             />
           ))}
         </ul>
