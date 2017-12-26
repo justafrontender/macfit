@@ -34,6 +34,12 @@ class App extends React.Component {
     this.handleAddToCart = this.handleAddToCart.bind(this);
   }
 
+  componentDidMount() {
+    // fetch('/api/catalog')
+    //   .then(response => response.json())
+    //   .then(catalog => console.log(catalog));
+  }
+
   getBasketTotals(basket) {
     return basket.reduce(
       (sum, item) => {

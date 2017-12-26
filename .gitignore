@@ -7,9 +7,8 @@ __MACOSX
 *.psd
 *.sublime*
 .publish
-css/*.css
 node_modules/
 Thumbs.db
-sources/
-build/
-public/
+/sources/
+/static/
+/public/
