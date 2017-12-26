@@ -46,13 +46,12 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
+        test: /\.(jpe?g|gif|png|svg)$/,
         use: [
           {
-            loader: `url-loader`,
+            loader: `file-loader`,
             options: {
-              limit: 10000,
-              name: `[name].[hash:6].[ext]`,
+              name: `img/[name].[hash:6].[ext]`,
             },
           },
           { loader: `image-webpack-loader` },

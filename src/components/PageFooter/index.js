@@ -1,4 +1,7 @@
 import React from 'react';
+import iconVk from './img/icon-vk.svg';
+import iconFb from './img/icon-fb.svg';
+import iconInsta from './img/icon-insta.svg';
 
 const PageFooter = () => (
   <footer className='page-footer'>
@@ -27,7 +30,7 @@ const PageFooter = () => (
               rel='noopener noreferrer'
             >
               <svg>
-                <use xlinkHref='/img/sprite.svg#icon-vk' />
+                <use xlinkHref={iconVk} />
               </svg>
               Вконтакте
             </a>
@@ -41,7 +44,7 @@ const PageFooter = () => (
               rel='noopener noreferrer'
             >
               <svg>
-                <use xlinkHref='/img/sprite.svg#icon-fb' />
+                <use xlinkHref={iconFb} />
               </svg>
               Facebook
             </a>
@@ -55,7 +58,7 @@ const PageFooter = () => (
               rel='noopener noreferrer'
             >
               <svg>
-                <use xlinkHref='/img/sprite.svg#icon-insta' />
+                <use xlinkHref={iconInsta} />
               </svg>
               Instagram
             </a>
