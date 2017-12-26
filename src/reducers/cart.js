@@ -35,8 +35,9 @@ const cart = (state = [], action) => {
       return result;
 
     case `${model}/${CLEAR}`:
-    default:
       return [];
+    default:
+      return state;
   }
 };
 
