@@ -80,7 +80,7 @@ class App extends React.Component {
             render={props => (
               <Popup history={props.history}>
                 <GoodDetails
-                  goods={this.props.catalog}
+                  catalog={this.props.catalog}
                   {...props}
                 />
               </Popup>
