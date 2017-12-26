@@ -1,15 +1,18 @@
 import findIndex from 'lodash/findIndex';
-import { ADD_ITEM, DELETE_ITEM, CHANGE_QUANTITY, CLEAR } from '../actions/cart';
+import { model, LOAD, ADD_ITEM, DELETE_ITEM, CHANGE_QUANTITY, CLEAR } from '../actions/cart';
 /* eslint-disable no-case-declarations */
 
-const reducer = (state = [], action) => {
+const cart = (state = [], action) => {
   const itemKey = findIndex(state, item => item.productId === action.productId);
   const result = state.slice();
 
   switch (action.type) {
-    case ADD_ITEM:
-      // если такой товар уже есть в корзине
-      // увеличить количество на 1
+    case `${model}/${LOAD}`:
+      return action.items.slice();
+
+    case `${model}/${ADD_ITEM}`:
+      // если товара нет в корзине
+      // добавить в корзину
       if (itemKey === -1) {
         return [
           ...state,
@@ -20,21 +23,21 @@ const reducer = (state = [], action) => {
         ];
       }
 
-    // иначе добавить в корзину
+    // иначе увеличить количество на 1
     // eslint-disable-next-line no-fallthrough
-    case CHANGE_QUANTITY:
+    case `${model}/${CHANGE_QUANTITY}`:
       const quantity = result[itemKey].quantity + action.amount;
       result[itemKey].quantity = quantity < 1 ? 1 : quantity;
       return result;
 
-    case DELETE_ITEM:
-      // eslint-disable-next-line no-redeclare
+    case `${model}/${DELETE_ITEM}`:
       result.splice(itemKey, 1);
       return result;
 
-    case CLEAR:
+    case `${model}/${CLEAR}`:
+    default:
       return [];
   }
 };
 
-export default reducer;
+export default cart;

@@ -1,22 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { addItem } from '../../actions/cart';
 import GoodTile from '../GoodTile';
 
-const GoodsList = props => (
-  <section className='goods-list'>
-    <h2 className='goods-list__title'>{props.heading}</h2>
+class GoodsList extends React.Component {
+  constructor(props, context) {
+    super(props, context);
 
-    {props.goods.map(item => {
-      return (
-        <GoodTile
-          good={item}
-          key={item.id}
-          onAddToCart={props.onAddToCart}
-        />
-      );
-    })}
-  </section>
-);
+    this.store = this.context.store;
+
+    this.handleAddToCart = this.handleAddToCart.bind(this);
+  }
+
+  componentDidMount() {
+    this.unsubscribeStore = this.store.subscribe(() => this.forceUpdate());
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeStore();
+  }
+
+  handleAddToCart(productId) {
+    this.store.dispatch(addItem(productId, 1));
+  }
+
+  render() {
+    return (
+      <section className='goods-list'>
+        <h2 className='goods-list__title'>{this.props.heading}</h2>
+
+        {this.props.catalog.map(item => {
+          return (
+            <GoodTile
+              good={item}
+              key={item.id}
+              onAddToCart={this.handleAddToCart}
+            />
+          );
+        })}
+      </section>
+    );
+  }
+}
+
+GoodsList.contextTypes = {
+  store: PropTypes.shape({})
+};
 
 GoodsList.propTypes = {
   heading: PropTypes.string,

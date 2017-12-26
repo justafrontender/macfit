@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from 'react-router-dom/BrowserRouter';
 import { createStore } from 'redux';
-// import { Provider } from 'react-redux';
-import cartReducer from './reducers/cart';
+import { Provider } from 'react-redux';
+import reducer from './reducers';
 import App from './components/App';
 import deliveryTypes from './data/deliveryTypes';
 import orderData from './data/order';
@@ -14,7 +14,7 @@ import './favicons';
 // temporarely include backend stub
 import './static/api';
 
-const cartStore = createStore(cartReducer, [{ productId: 1, quantity: 10 }]);
+const cartStore = createStore(reducer);
 
 document.addEventListener(
   'DOMContentLoaded',
@@ -23,15 +23,16 @@ document.addEventListener(
       .then(response => response.json())
       .then(catalog => {
         ReactDOM.render(
-          <Router>
-            <App
-              catalog={catalog}
-              deliveryTypes={deliveryTypes}
-              cart={cartStore}
-              orderFields={orderData}
-              siteMenu={siteMenu}
-            />
-          </Router>,
+          <Provider store={cartStore}>
+            <Router>
+              <App
+                catalog={catalog}
+                deliveryTypes={deliveryTypes}
+                orderFields={orderData}
+                siteMenu={siteMenu}
+              />
+            </Router>
+          </Provider>,
           document.getElementById('root')
         );
       })

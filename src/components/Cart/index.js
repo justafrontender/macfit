@@ -5,7 +5,7 @@ import CartItem from '../CartItem';
 class Cart extends React.Component {
   render() {
     const basket = this.props.basket.map(basketItem => {
-      basketItem.good = find(this.props.goods, ['id', basketItem.productId]);
+      basketItem.good = find(this.props.catalog, ['id', basketItem.productId]);
       return basketItem;
     });
 
@@ -16,8 +16,8 @@ class Cart extends React.Component {
             <CartItem
               basketItem={basketItem}
               key={basketItem.productId}
-              onDelete={this.props.onCartItemDelete}
-              onChangeQuantity={this.props.onCartChangeQuantity}
+              onDelete={this.props.onItemDelete}
+              onChangeQuantity={this.props.onChangeQuantity}
             />
           ))}
         </ul>
