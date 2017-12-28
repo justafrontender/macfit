@@ -51,7 +51,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server -d --hot --host 0.0.0.0",
-    "build": "rm -rf public && webpack -p",
+    "build": "rm -rf public && webpack -p --devtool none",
     "test": "editorconfig-cli && eslint src",
     "gulpbuild": "gulp images"
   },
