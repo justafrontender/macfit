@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './style.scss';
 
 const PriceTag = ({ price, weight }) => (
   <div className='price-tag'>

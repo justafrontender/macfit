@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'react-router-dom/Link';
+import './style.scss';
 
 class CartItem extends React.Component {
   constructor(props) {

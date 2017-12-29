@@ -5,6 +5,7 @@ import FieldText from '../FieldText';
 import RadioGroup from '../RadioGroup';
 import Radio from '../Radio';
 import PageTitle from '../PageTitle';
+import './style.scss';
 
 class Order extends React.Component {
   render() {

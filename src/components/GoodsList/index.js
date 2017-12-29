@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GoodTile from '../GoodTile';
+import './style.scss';
 
 const GoodsList = props => (
   <section className='goods-list'>

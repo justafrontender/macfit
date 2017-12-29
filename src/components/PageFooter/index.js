@@ -2,6 +2,7 @@ import React from 'react';
 import iconVk from './img/icon-vk.svg';
 import iconFb from './img/icon-fb.svg';
 import iconInsta from './img/icon-insta.svg';
+import './style.scss';
 
 const PageFooter = () => (
   <footer className='page-footer'>

@@ -5,7 +5,7 @@ import App from './components/App';
 import deliveryTypes from './data/deliveryTypes';
 import orderData from './data/order';
 import siteMenu from './data/siteMenu';
-import './style.scss';
+import './scss/global.scss';
 import './favicons';
 
 // temporarely include backend stub
