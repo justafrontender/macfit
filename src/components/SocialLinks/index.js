@@ -13,7 +13,7 @@ const SocialLinks = ({ contacts: { socialLinks } }) => (
     <ul className='social-links__list'>
       {
         socials.map(item => (
-          <li>
+          <li key={item.id}>
             <a
               className={`social-links__link social-links__link--${item.id}`}
               href={socialLinks[item.id]}
