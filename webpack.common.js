@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-  filename: 'style.[contenthash].css'
+  filename: 'style.[contenthash:6].css'
 });
 
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
@@ -40,7 +40,7 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: { presets: ['env', 'react'] }
+            options: { presets: [['env', { modules: false }], 'react'] }
           },
           { loader: 'eslint-loader' },
         ]
