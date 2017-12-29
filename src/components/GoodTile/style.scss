@@ -1,3 +1,5 @@
+@import '../../scss/vars.scss';
+
 .good-tile {
   display: flex;
   flex-direction: column;
@@ -6,10 +8,6 @@
   box-sizing: border-box;
   border-radius: 2px;
   @include light-shadow;
-
-  &:last-of-type {
-    margin-right: auto;
-  }
 }
 
 .good-tile__link {
@@ -72,7 +70,7 @@
     left: 4px;
     right: 4px;
     bottom: 4px;
-    background: url('components/GoodTile/img/plus.svg') 50% no-repeat;
+    background: url('./img/plus.svg') 50% no-repeat;
   }
 }
 

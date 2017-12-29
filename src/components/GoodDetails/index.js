@@ -4,6 +4,8 @@ import find from 'lodash/find';
 import findIndex from 'lodash/findIndex';
 import Redirect from 'react-router-dom/Redirect';
 import { addItem } from '../../actions/cart';
+import Btn from '../Btn';
+import './style.scss';
 
 class GoodDetails extends React.Component {
   constructor(props, context) {
@@ -50,14 +52,15 @@ class GoodDetails extends React.Component {
             <p>{this.good.description}</p>
           </div>
 
-          <button
-            className='btn btn--to-cart good-details__cart-btn'
+          <Btn
+            className='good-details__cart-btn'
+            bemMod='to-cart'
             type='button'
             title='Добавить в заказ'
             onClick={this.handleAddToCart}
           >
             {isAdded === -1 ? 'Добавить в заказ' : 'Добавить еще один'}
-          </button>
+          </Btn>
         </div>
       </section>
     );

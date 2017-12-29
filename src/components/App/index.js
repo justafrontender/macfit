@@ -73,7 +73,7 @@ class App extends React.Component {
             </Switch>
           </PageContent>
 
-          <PageFooter />
+          <PageFooter contacts={this.props.contacts} />
 
           <Route
             path='/product/:productCode/'

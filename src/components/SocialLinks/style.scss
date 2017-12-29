@@ -1,3 +1,5 @@
+@import '../../scss/vars.scss';
+
 .social-links {
   margin: 10px 0;
 }
@@ -18,9 +20,26 @@
   display: block;
   font-size: 0;
   color: transparent;
-}
 
-.social-links__link svg {
-  width: 25px;
-  height: 25px;
+  &::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &--vk::before {
+    background-image: url('./img/icon-vk.svg');
+  }
+
+  &--fb::before {
+    background-image: url('./img/icon-fb.svg');
+  }
+
+  &--insta::before {
+    background-image: url('./img/icon-insta.svg');
+  }
 }

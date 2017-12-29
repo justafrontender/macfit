@@ -1,6 +1,7 @@
 import React from 'react';
 import find from 'lodash/find';
 import CartItem from '../CartItem';
+import './style.scss';
 
 class Cart extends React.Component {
   render() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.scss';
 
 const RadioGroup = ({ title, name, children, onChange }) => (
   <div className='radio-group'>

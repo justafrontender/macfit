@@ -1,3 +1,33 @@
+// color presets
+$primary-text-color: #444;
+$menu-color: #000;
+$link-color: #003569;
+$popup-border-color: gray;
+$primary-text-color: #000;
+$popup-control-bg: white;
+
+// screen widths
+$mobile-min-width: 320px;
+$desktop-width: 1000px;
+
+// media queries
+$mobile-vertical-only: #{'(max-width: 567px)'};
+$mobile-wide-widths: #{'(min-width: 568px)'};
+$mobile-wide-only: #{'(min-width: 568px) and (max-width: 767px)'};
+$mobile-only: #{'(max-width: 767px)'};
+
+$tablet-only: #{'(min-width: 768px) and (max-width: 999px)'};
+$tablet-widths: #{'(min-width: 768px)'};
+
+$desktop-widths: #{'(min-width: 1000px)'};
+
+$retina: #{'(min-resolution: 144dpi), (min-resolution: 1.5dppx)'};
+
+// z-indexes
+$menu-z-index: 10;
+$popup-z-index: 15;
+
+// mixins
 @mixin visually-hidden () {
   position: absolute;
   width: 1px;
@@ -7,41 +37,6 @@
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(50%);
           clip-path: inset(50%);
-}
-
-@mixin clearfix () {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
-@mixin container (
-  $mobile-padding-left: 30px,
-  $mobile-padding-right: 30px,
-  $tablet-padding-left: 50px,
-  $tablet-padding-right: 50px,
-  $desktop-padding-left: 50px,
-  $desktop-padding-right: 50px,
-  $max-width: $desktop-width
-) {
-  box-sizing: border-box;
-  max-width: $max-width;
-  padding-left: $mobile-padding-left;
-  padding-right: $mobile-padding-right;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media #{$tablet-only} {
-    padding-left: $tablet-padding-left;
-    padding-right: $tablet-padding-right;
-  }
-
-  @media #{$desktop-widths} {
-    padding-left: $desktop-padding-left;
-    padding-right: $desktop-padding-right;
-  }
 }
 
 @mixin popup-shadow () {

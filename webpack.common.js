@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-  filename: 'style.[contenthash].css'
+  filename: 'style.[contenthash:6].css'
 });
 
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
@@ -40,19 +40,18 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: { presets: ['env', 'react'] }
+            options: { presets: [['env', { modules: false }], 'react', 'stage-2'] }
           },
           { loader: 'eslint-loader' },
         ]
       },
       {
-        test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
+        test: /\.(jpe?g|gif|png|svg)$/,
         use: [
           {
-            loader: `url-loader`,
+            loader: `file-loader`,
             options: {
-              limit: 10000,
-              name: `[name].[hash:6].[ext]`,
+              name: `img/[name].[hash:6].[ext]`,
             },
           },
           { loader: `image-webpack-loader` },

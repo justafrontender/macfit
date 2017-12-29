@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { addItem } from '../../actions/cart';
 import GoodTile from '../GoodTile';
+import './style.scss';
 
 class GoodsList extends React.Component {
   constructor(props, context) {

@@ -1,3 +1,5 @@
+@import '../../scss/vars.scss';
+
 .circle-btn {
   position: relative;
   width: 40px;
@@ -7,57 +9,23 @@
   border-radius: 50%;
   font-size: 0;
   background-color: $popup-control-bg;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   cursor: pointer;
   @include pane-shadow;
 }
 
 .circle-btn--x {
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-    top: 47%;
-    left: 12.5%;
-    width: 75%;
-    height: 5%;
-    background-color: #776d42;
-  }
-
-  &::after {
-    transform: rotate(45deg);
-  }
-  &::before {
-    transform: rotate(-45deg);
-  }
+  background-image: url('./img/x.svg');
 }
 
 .circle-btn--plus {
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-    top: 48%;
-    left: 12.5%;
-    width: 75%;
-    height: 4%;
-    background-color: #776d42;
-  }
-
-  &::before {
-    transform: rotate(90deg);
-  }
+  background-image: url('./img/plus.svg');
 }
 
 .circle-btn--minus {
-  &::before {
-    content: '';
-    position: absolute;
-    top: 48%;
-    left: 12.5%;
-    width: 75%;
-    height: 4%;
-    background-color: #776d42;
-  }
+  background-image: url('./img/minus.svg');
 }
 
 .circle-btn--small {

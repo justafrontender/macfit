@@ -1,6 +1,8 @@
 import React from 'react';
+import SocialLinks from '../SocialLinks';
+import './style.scss';
 
-const PageFooter = () => (
+const PageFooter = ({ contacts }) => (
   <footer className='page-footer'>
     <div className='container container--space page-footer__container'>
       <section className='footer-contacts'>
@@ -11,57 +13,12 @@ const PageFooter = () => (
             className='footer-contacts__link footer-contacts__link--phone'
             href='tel:+79604801401'
           >
-            +7 (960) 480-14-01
+            {contacts.phone}
           </a>
         </p>
       </section>
 
-      <section className='social-links'>
-        <span>Подружитесь с нами!</span>
-        <ul className='social-links__list'>
-          <li>
-            <a
-              className='social-links__link social-links__link--vk'
-              href='https://vk.com/eatfit_family'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <svg>
-                <use xlinkHref='/img/sprite.svg#icon-vk' />
-              </svg>
-              Вконтакте
-            </a>
-          </li>
-
-          <li>
-            <a
-              className='social-links__link social-links__link--fb'
-              href='https://www.facebook.com/EatFit.family'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <svg>
-                <use xlinkHref='/img/sprite.svg#icon-fb' />
-              </svg>
-              Facebook
-            </a>
-          </li>
-
-          <li>
-            <a
-              className='social-links__link social-links__link--insta'
-              href='https://www.instagram.com/macfit_krd/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <svg>
-                <use xlinkHref='/img/sprite.svg#icon-insta' />
-              </svg>
-              Instagram
-            </a>
-          </li>
-        </ul>
-      </section>
+      <SocialLinks contacts={contacts} />
 
       <section className='copyright'>
         {'Разработал '}

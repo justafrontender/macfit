@@ -6,9 +6,10 @@ import { Provider } from 'react-redux';
 import reducer from './reducers';
 import App from './components/App';
 import deliveryTypes from './data/deliveryTypes';
+import contacts from './data/contacts';
 import orderData from './data/order';
 import siteMenu from './data/siteMenu';
-import './style.scss';
+import './scss/global.scss';
 import './favicons';
 
 // temporarely include backend stub
@@ -28,6 +29,7 @@ document.addEventListener(
               <App
                 catalog={catalog}
                 deliveryTypes={deliveryTypes}
+                contacts={contacts}
                 orderFields={orderData}
                 siteMenu={siteMenu}
               />

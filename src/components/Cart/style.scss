@@ -1,7 +1,9 @@
+@import '../../scss/vars.scss';
+
 .cart__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0;
   margin: 0;
 }
