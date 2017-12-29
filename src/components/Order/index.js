@@ -5,6 +5,7 @@ import FieldText from '../FieldText';
 import RadioGroup from '../RadioGroup';
 import Radio from '../Radio';
 import PageTitle from '../PageTitle';
+import Btn from '../Btn';
 import './style.scss';
 
 class Order extends React.Component {
@@ -56,7 +57,7 @@ class Order extends React.Component {
             onChange={this.props.onOrderFieldChange}
           />
 
-          <button className='btn order__submit' type='button'>Сделать заказ</button>
+          <Btn className='order__submit' type='button'>Сделать заказ</Btn>
         </div>
       </form>
     );
