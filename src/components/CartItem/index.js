@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'react-router-dom/Link';
+import CircleBtn from '../CircleBtn';
+import './style.scss';
 
 class CartItem extends React.Component {
   constructor(props) {
@@ -32,14 +34,15 @@ class CartItem extends React.Component {
           </div>
         </div>
 
-        <button
-          className='circle-btn circle-btn--small circle-btn--x cart-item__btn-remove'
+        <CircleBtn
+          className='cart-item__btn-remove'
+          bemMod={['small', 'x']}
           type='button'
           title='Удалить из заказа'
           onClick={this.handleDelete}
         >
           Удалить из заказа
-        </button>
+        </CircleBtn>
         <label className='field-number'>
           <input
             className='field-number__input'
@@ -51,24 +54,26 @@ class CartItem extends React.Component {
             data-step='1'
             readOnly
           />
-          <button
-            className='field-number__btn-less circle-btn circle-btn--small circle-btn--minus'
+          <CircleBtn
+            className='field-number__btn-less'
+            bemMod={['small', 'minus']}
             type='button'
             data-action='decrease'
             title='Уменьшить количество'
             tabIndex='-1'
           >
             -
-          </button>
-          <button
-            className='field-number__btn-more circle-btn circle-btn--small circle-btn--plus'
+          </CircleBtn>
+          <CircleBtn
+            className='field-number__btn-more'
+            bemMod={['small', 'plus']}
             type='button'
             data-action='increase'
             title='Увеличить количество'
             tabIndex='-1'
           >
             +
-          </button>
+          </CircleBtn>
         </label>
       </li>
     );

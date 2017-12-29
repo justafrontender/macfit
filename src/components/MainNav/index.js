@@ -1,16 +1,15 @@
 import React from 'react';
 import NavLink from 'react-router-dom/navlink';
 import PropTypes from 'prop-types';
-import B from '../../lib/B';
+import b from '../../lib/b';
 import hash from '../../lib/hash';
 import Counter from '../Counter';
-
-const b = B.lock('main-nav');
+import './style.scss';
 
 const MainNav = ({ menuOpened, menuItems, counter, onClick }) => {
   return (
-    <nav className={b()}>
-      <ul className={b('list', { visible: menuOpened })}>
+    <nav className={b('main-nav')}>
+      <ul className={b('main-nav__list', menuOpened && 'visible')}>
         {
           !!counter &&
           <li>

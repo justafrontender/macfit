@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import Router from 'react-router-dom/BrowserRouter';
 import App from './components/App';
 import deliveryTypes from './data/deliveryTypes';
+import contacts from './data/contacts';
 import orderData from './data/order';
 import siteMenu from './data/siteMenu';
-import './style.scss';
+import './scss/global.scss';
 import './favicons';
 
 // temporarely include backend stub
@@ -23,6 +24,7 @@ document.addEventListener(
               goodsList={catalog}
               deliveryTypes={deliveryTypes}
               orderData={orderData}
+              contacts={contacts}
               siteMenu={siteMenu}
             />
           </Router>,

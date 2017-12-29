@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Logo from '../Logo';
 import MenuToggler from '../MenuToggler';
 import MainNav from '../MainNav';
+import './style.scss';
 
 class PageHeader extends React.Component {
   constructor(props) {

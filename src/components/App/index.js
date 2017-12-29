@@ -34,6 +34,12 @@ class App extends React.Component {
     this.handleAddToCart = this.handleAddToCart.bind(this);
   }
 
+  componentDidMount() {
+    // fetch('/api/catalog')
+    //   .then(response => response.json())
+    //   .then(catalog => console.log(catalog));
+  }
+
   getBasketTotals(basket) {
     return basket.reduce(
       (sum, item) => {
@@ -146,7 +152,7 @@ class App extends React.Component {
             </Switch>
           </PageContent>
 
-          <PageFooter />
+          <PageFooter contacts={this.props.contacts} />
 
           <Route
             path='/product/:productCode/'

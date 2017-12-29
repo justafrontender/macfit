@@ -1,6 +1,8 @@
 import React from 'react';
 import find from 'lodash/find';
 import Redirect from 'react-router-dom/Redirect';
+import Btn from '../Btn';
+import './style.scss';
 
 const GoodDetails = ({ goods, match }) => {
   const good = find(goods, ['code', match.params.productCode]);
@@ -25,13 +27,14 @@ const GoodDetails = ({ goods, match }) => {
           <p>{good.description}</p>
         </div>
 
-        <button
-          className='btn btn--to-cart good-details__cart-btn'
+        <Btn
+          className='good-details__cart-btn'
+          bemMod='to-cart'
           type='button'
           title='Добавить в заказ'
         >
           Добавить в заказ
-        </button>
+        </Btn>
       </div>
     </section>
   );

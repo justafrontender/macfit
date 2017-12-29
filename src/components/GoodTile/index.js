@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'react-router-dom/Link';
 import Button from '../Button';
 import PriceTag from '../PriceTag';
+import './style.scss';
 
 class GoodTile extends React.Component {
   constructor(props) {
