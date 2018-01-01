@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import find from 'lodash/find';
+import { changeQuantity, deleteItem } from '../../actions/cart';
 import Cart from '../Cart';
 import FieldText from '../FieldText';
 import RadioGroup from '../RadioGroup';
@@ -9,15 +11,55 @@ import Btn from '../Btn';
 import './style.scss';
 
 class Order extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.store = this.context.store;
+
+    this.handleItemDelete = this.handleItemDelete.bind(this);
+    this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
+  }
+
+  componentDidMount() {
+    this.unsubscribeStore = this.store.subscribe(() => this.forceUpdate());
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeStore();
+  }
+
+  getBasketTotals() {
+    return this.store.getState().cart.reduce(
+      (sum, item) => {
+        const good = find(this.props.catalog, i => i.id === item.productId);
+        sum.count += item.quantity;
+        sum.price += good.price * item.quantity;
+        return sum;
+      },
+      { count: 0, price: 0 }
+    );
+  }
+
+  handleItemDelete(productId) {
+    this.store.dispatch(deleteItem(productId));
+  }
+
+  handleChangeQuantity(productId, amount) {
+    this.store.dispatch(changeQuantity(productId, amount));
+  }
+
   render() {
+    const { cart } = this.store.getState();
     return (
       <form className='order' method='post'>
         <PageTitle>Ваш заказ</PageTitle>
 
         <Cart
-          basket={this.props.basket}
-          basketTotals={this.props.basketTotals}
-          onCartItemDelete={this.props.onCartItemDelete}
+          catalog={this.props.catalog}
+          basket={cart}
+          basketTotals={this.getBasketTotals()}
+          onItemDelete={this.handleItemDelete}
+          onChangeQuantity={this.handleChangeQuantity}
         />
 
         <div className='order__fields'>
@@ -63,6 +105,10 @@ class Order extends React.Component {
     );
   }
 }
+
+Order.contextTypes = {
+  store: PropTypes.shape({})
+};
 
 Order.propTypes = {
   deliveryTypes: PropTypes.arrayOf(PropTypes.shape({})),
