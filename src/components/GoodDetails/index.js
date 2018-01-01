@@ -38,7 +38,22 @@ class GoodDetails extends React.Component {
     return (
       <section className='good-details'>
         <div className='good-details__image'>
-          <img src={this.good.pictures[0]} alt={this.good.name} width='100%' />
+          <picture>
+            <source
+              media='(min-width: 700px)'
+              srcSet={`${this.good.pictures[0].w1000} 1x, ${this.good.pictures[0].w1500} 2x`}
+            />
+            <source
+              media='(min-width: 400px)'
+              srcSet={`${this.good.pictures[0].w602} 1x, ${this.good.pictures[0].w1000} 2x`}
+            />
+            <img
+              src={this.good.pictures[0].w368}
+              srcSet={`${this.good.pictures[0].w602} 2x`}
+              alt={`Фотография ${this.good.name}`}
+              width='100%'
+            />
+          </picture>
         </div>
 
         <div className='good-details__infopane'>

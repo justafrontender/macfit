@@ -5,18 +5,18 @@ import './style.scss';
 
 class Cart extends React.Component {
   render() {
-    const basket = this.props.basket.map(basketItem => {
-      basketItem.good = find(this.props.catalog, ['id', basketItem.productId]);
-      return basketItem;
+    const basket = this.props.basket.map(item => {
+      item.good = find(this.props.catalog, ['id', item.productId]);
+      return item;
     });
 
     return (
       <div className='cart'>
         <ul className='cart__list'>
-          {basket.map(basketItem => (
+          {basket.map(item => (
             <CartItem
-              basketItem={basketItem}
-              key={basketItem.productId}
+              item={item}
+              key={item.productId}
               onDelete={this.props.onItemDelete}
               onChangeQuantity={this.props.onChangeQuantity}
             />
