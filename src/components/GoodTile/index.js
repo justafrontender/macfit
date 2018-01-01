@@ -29,6 +29,7 @@ class GoodTile extends React.Component {
               srcSet={`${this.props.good.pictures[0].w368} 1x, ${this.props.good.pictures[0].w602} 2x`}
             />
             <img
+              className='good-tile__image'
               src={this.props.good.pictures[0].w184}
               srcSet={`${this.props.good.pictures[0].w368} 2x`}
               alt={`Фотография ${this.props.good.name}`}

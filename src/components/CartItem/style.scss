@@ -12,11 +12,22 @@
   @include light-shadow;
 }
 
-.cart-item__image {
+.cart-item__link {
+  position: relative;
   width: 100%;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+  }
 }
 
-.cart-item__image img {
+.cart-item__image {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
   width: 100%;
   border-radius: 2px;

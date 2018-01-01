@@ -27,13 +27,14 @@ class CartItem extends React.Component {
   render() {
     return (
       <li className='cart-item'>
-        <Link className='cart-item__image' to={`/product/${this.props.item.good.code}`} tabIndex='-1'>
+        <Link className='cart-item__link' to={`/product/${this.props.item.good.code}`} tabIndex='-1'>
           <picture>
             <source
               media='(min-width: 768px)'
               srcSet={`${this.props.item.good.pictures[0].w368} 1x, ${this.props.item.good.pictures[0].w602} 2x`}
             />
             <img
+              className='cart-item__image'
               src={this.props.item.good.pictures[0].w184}
               srcSet={`${this.props.item.good.pictures[0].w368} 2x`}
               alt={`Фотография ${this.props.item.good.name}`}
