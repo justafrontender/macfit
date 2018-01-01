@@ -23,7 +23,18 @@ class GoodTile extends React.Component {
           to={`/product/${this.props.good.code}`}
           tabIndex='-1'
         >
-          <img src={this.props.good.pictures[0]} alt={`Фотография ${this.props.good.name}`} />
+          <picture>
+            <source
+              media='(min-width: 768px)'
+              srcSet={`${this.props.good.pictures[0].w368} 1x, ${this.props.good.pictures[0].w602} 2x`}
+            />
+            <img
+              className='good-tile__image'
+              src={this.props.good.pictures[0].w184}
+              srcSet={`${this.props.good.pictures[0].w368} 2x`}
+              alt={`Фотография ${this.props.good.name}`}
+            />
+          </picture>
         </Link>
         <div className='good-tile__specs'>
           <h3 className='good-tile__title'>
