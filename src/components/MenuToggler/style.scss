@@ -8,44 +8,9 @@
   height: 55px;
   padding: 0;
   border: none;
-  background: transparent;
+  background: url('./img/dots.svg') 50% no-repeat transparent;
   cursor: pointer;
   transition: 0.3s all;
-}
-
-.menu-toggler i {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 5px;
-  height: 5px;
-  padding: 25px;
-  border: none;
-  background: gray;
-  background-clip: content-box;
-  border-radius: 50%;
-
-  &::before {
-    content: '';
-    position: relative;
-    top: -10px;
-    display: block;
-    width: 5px;
-    height: 5px;
-    background: gray;
-    border-radius: 50%;
-  }
-
-  &::after {
-    content: '';
-    position: relative;
-    top: 5px;
-    display: block;
-    width: 5px;
-    height: 5px;
-    background: gray;
-    border-radius: 50%;
-  }
 }
 
 .menu-toggler__counter {
