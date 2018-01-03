@@ -1,14 +1,14 @@
 export const model = 'cart';
 
-export const LOAD = 'LOAD';
+export const RESTORE = 'RESTORE';
 export const ADD_ITEM = 'ADD_ITEM';
 export const CHANGE_QUANTITY = 'CHANGE_QUANTITY';
 export const DELETE_ITEM = 'DELETE_ITEM';
 export const CLEAR = 'CLEAR';
 
-export const loadItems = items => {
+export const restore = items => {
   return {
-    type: `${model}/${LOAD}`,
+    type: `${model}/${RESTORE}`,
     items
   };
 };

@@ -10,8 +10,8 @@ const PriceTag = ({ price, weight }) => (
 );
 
 PriceTag.propTypes = {
-  price: PropTypes.number.isRequired,
-  weight: PropTypes.number
+  price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  weight: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 PriceTag.defaultProps = {
