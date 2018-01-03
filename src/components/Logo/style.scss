@@ -1,7 +1,6 @@
 @import '../../scss/vars.scss';
 
 .logo {
-  flex-grow: 1;
   display: block;
   padding: 10px;
   margin: 0 auto;
@@ -12,4 +11,10 @@
   display: block;
   margin: 0 auto;
   max-height: 35px;
+}
+
+@media #{$desktop-widths} {
+  .logo {
+    margin: 0;
+  }
 }
