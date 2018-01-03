@@ -16,6 +16,7 @@ class PageHeader extends React.Component {
     };
 
     this.menuToggle = this.menuToggle.bind(this);
+    this.menuClose = this.menuClose.bind(this);
   }
 
   componentDidMount() {
@@ -27,7 +28,11 @@ class PageHeader extends React.Component {
   }
 
   menuToggle() {
-    this.setState({ menuOpened: !this.state.menuOpened });
+    this.setState(prevState => ({ menuOpened: !prevState.menuOpened }));
+  }
+
+  menuClose() {
+    this.setState(prevState => ({ menuOpened: prevState ? false : null }));
   }
 
   render() {
@@ -44,7 +49,7 @@ class PageHeader extends React.Component {
           <MainNav
             menuItems={this.props.siteMenu}
             menuOpened={this.state.menuOpened}
-            onClick={this.menuToggle}
+            onClick={this.menuClose}
             counter={counter}
           />
         </div>
