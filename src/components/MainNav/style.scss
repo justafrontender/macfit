@@ -64,3 +64,43 @@
   margin-top: -3px;
   margin-left: 10px;
 }
+
+@media #{$desktop-widths} {
+  .main-nav {
+    flex-grow: 0;
+    width: auto;
+  }
+
+  .main-nav__list {
+    position: static;
+    display: flex;
+    border: none;
+    box-shadow: none;
+
+    &--visible::before {
+      content: none;
+    }
+  }
+
+  .main-nav__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 5px 15px;
+    border: solid 1px transparent;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    &--active {
+      border-color: #df9e41;
+      background-color: transparent;
+    }
+  }
+
+  .main-nav__counter {
+    position: relative;
+    display: inline-block;
+    margin-top: 0;
+  }
+}

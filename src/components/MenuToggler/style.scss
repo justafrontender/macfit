@@ -19,3 +19,9 @@
   right: 26px;
   z-index: 1;
 }
+
+@media #{$desktop-widths} {
+  .menu-toggler {
+    display: none;
+  }
+}
