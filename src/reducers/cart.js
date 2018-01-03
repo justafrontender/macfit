@@ -1,5 +1,5 @@
 import findIndex from 'lodash/findIndex';
-import { model, LOAD, ADD_ITEM, DELETE_ITEM, CHANGE_QUANTITY, CLEAR } from '../actions/cart';
+import { model, RESTORE, ADD_ITEM, DELETE_ITEM, CHANGE_QUANTITY, CLEAR } from '../actions/cart';
 /* eslint-disable no-case-declarations */
 
 const cart = (state = [], action) => {
@@ -7,7 +7,7 @@ const cart = (state = [], action) => {
   const result = state.slice();
 
   switch (action.type) {
-    case `${model}/${LOAD}`:
+    case `${model}/${RESTORE}`:
       return action.items.slice();
 
     case `${model}/${ADD_ITEM}`:
