@@ -7,11 +7,11 @@
         "name": "Фитбург Классик",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/23e\/184_184_2\/klassicheskii_-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/23e\/368_368_2\/klassicheskii_-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/23e\/602_602_2\/klassicheskii_-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/23e\/1000_1000_2\/klassicheskii_-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/23e\/1500_1500_2\/klassicheskii_-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "160",
@@ -25,11 +25,11 @@
         "name": "Фитбург Фулхаус",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/399\/184_184_2\/fulkhaus-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/399\/368_368_2\/fulkhaus-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/399\/602_602_2\/fulkhaus-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/399\/1000_1000_2\/fulkhaus-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/399\/1500_1500_2\/fulkhaus-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "200",
@@ -43,11 +43,11 @@
         "name": "Фитбург XXL",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/c56\/184_184_2\/xxl-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/c56\/368_368_2\/xxl-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/c56\/602_602_2\/xxl-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/c56\/1000_1000_2\/xxl-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/c56\/1500_1500_2\/xxl-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "260",
@@ -61,11 +61,11 @@
         "name": "Фитбург Фитбосс",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/a5d\/184_184_2\/fitboss-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/a5d\/368_368_2\/fitboss-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/a5d\/602_602_2\/fitboss-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/a5d\/1000_1000_2\/fitboss-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/a5d\/1500_1500_2\/fitboss-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "350",
@@ -79,11 +79,11 @@
         "name": "Фитбург Францэ",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/204\/184_184_2\/frantsuzkii_-paren-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/204\/368_368_2\/frantsuzkii_-paren-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/204\/602_602_2\/frantsuzkii_-paren-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/204\/1000_1000_2\/frantsuzkii_-paren-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/204\/1500_1500_2\/frantsuzkii_-paren-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "220",
@@ -97,11 +97,11 @@
         "name": "Фитбург Гриндэй",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/b37\/184_184_2\/grindei_-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/b37\/368_368_2\/grindei_-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/b37\/602_602_2\/grindei_-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/b37\/1000_1000_2\/grindei_-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/b37\/1500_1500_2\/grindei_-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "210",
@@ -115,11 +115,11 @@
         "name": "Фитролл Раз",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/2cc\/184_184_2\/fitroll-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/2cc\/368_368_2\/fitroll-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/2cc\/602_602_2\/fitroll-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/2cc\/1000_1000_2\/fitroll-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/2cc\/1500_1500_2\/fitroll-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "240",
@@ -133,11 +133,11 @@
         "name": "Фитролл Два",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/a1f\/184_184_2\/fitroll-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/a1f\/368_368_2\/fitroll-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/a1f\/602_602_2\/fitroll-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/a1f\/1000_1000_2\/fitroll-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/a1f\/1500_1500_2\/fitroll-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "220",
@@ -151,11 +151,11 @@
         "name": "Фитгриль с куриным филе и французской горчицей",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/5ba\/184_184_2\/gril-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/5ba\/368_368_2\/gril-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/5ba\/602_602_2\/gril-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/5ba\/1000_1000_2\/gril-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/5ba\/1500_1500_2\/gril-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "245",
@@ -169,11 +169,11 @@
         "name": "Фитгриль с куриным филе и овощами",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/4e6\/184_184_2\/gril-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/4e6\/368_368_2\/gril-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/4e6\/602_602_2\/gril-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/4e6\/1000_1000_2\/gril-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/4e6\/1500_1500_2\/gril-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "245",
@@ -187,11 +187,11 @@
         "name": "Пицца мясная",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/9c4\/184_184_2\/pitstsa-myasnaya2-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/9c4\/368_368_2\/pitstsa-myasnaya2-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/9c4\/602_602_2\/pitstsa-myasnaya2-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/9c4\/1000_1000_2\/pitstsa-myasnaya2-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/9c4\/1500_1500_2\/pitstsa-myasnaya2-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "650",
@@ -205,11 +205,11 @@
         "name": "Пицца овощная",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/ec0\/184_184_2\/pitstsa-ovoshchnaya2-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/ec0\/368_368_2\/pitstsa-ovoshchnaya2-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/ec0\/602_602_2\/pitstsa-ovoshchnaya2-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/ec0\/1000_1000_2\/pitstsa-ovoshchnaya2-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/ec0\/1500_1500_2\/pitstsa-ovoshchnaya2-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "550",
@@ -223,11 +223,11 @@
         "name": "Наггетсы 6 шт.",
         "pictures": [
             {
-                "w184": "\/upload\/resize_cache\/iblock\/2ea\/184_184_2\/naggetsy-_1-of-1_.jpg",
-                "w368": "\/upload\/resize_cache\/iblock\/2ea\/368_368_2\/naggetsy-_1-of-1_.jpg",
-                "w602": "\/upload\/resize_cache\/iblock\/2ea\/602_602_2\/naggetsy-_1-of-1_.jpg",
-                "w1000": "\/upload\/resize_cache\/iblock\/2ea\/1000_1000_2\/naggetsy-_1-of-1_.jpg",
-                "w1500": "\/upload\/resize_cache\/iblock\/2ea\/1500_1500_2\/naggetsy-_1-of-1_.jpg"
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
             }
         ],
         "price": "195",
