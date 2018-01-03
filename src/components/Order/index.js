@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import find from 'lodash/find';
 import { changeQuantity, deleteItem } from '../../actions/cart';
+import { update } from '../../actions/order';
 import Cart from '../Cart';
 import FieldText from '../FieldText';
 import RadioGroup from '../RadioGroup';
@@ -18,6 +19,7 @@ class Order extends React.Component {
 
     this.handleItemDelete = this.handleItemDelete.bind(this);
     this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
+    this.handleFieldChange = this.handleFieldChange.bind(this);
   }
 
   componentDidMount() {
@@ -48,8 +50,14 @@ class Order extends React.Component {
     this.store.dispatch(changeQuantity(productId, amount));
   }
 
+  handleFieldChange(event) {
+    const { name, value } = event.target;
+    this.store.dispatch(update(name, value));
+  }
+
   render() {
-    const { cart } = this.store.getState();
+    const { cart, order } = this.store.getState();
+
     return (
       <form className='order' method='post'>
         <PageTitle>Ваш заказ</PageTitle>
@@ -66,13 +74,13 @@ class Order extends React.Component {
           <RadioGroup
             title='Доставка:'
             name='deliveryType'
-            onChange={this.props.onOrderFieldChange}
+            onChange={this.handleFieldChange}
           >
             {this.props.deliveryTypes.map(deliveryType => (
               <Radio
                 key={deliveryType.id}
                 value={deliveryType.id}
-                checked={deliveryType.id === this.props.orderFields.deliveryType}
+                checked={deliveryType.id === order.deliveryType}
               >
                 {deliveryType.name}
               </Radio>
@@ -85,8 +93,8 @@ class Order extends React.Component {
             type='tel'
             name='phoneNumber'
             placeholder='+79189999999'
-            value={this.props.orderFields.phoneNumber}
-            onChange={this.props.onOrderFieldChange}
+            value={order.phoneNumber}
+            onChange={this.handleFieldChange}
           />
 
           <FieldText
@@ -95,8 +103,8 @@ class Order extends React.Component {
             type='textarea'
             name='note'
             placeholder='Например: пиццу сделайте острее, а фитбург без французской горчицы'
-            value={this.props.orderFields.note}
-            onChange={this.props.onOrderFieldChange}
+            value={order.note}
+            onChange={this.handleFieldChange}
           />
 
           <Btn className='order__submit' type='button'>Сделать заказ</Btn>
@@ -113,8 +121,7 @@ Order.contextTypes = {
 Order.propTypes = {
   deliveryTypes: PropTypes.arrayOf(PropTypes.shape({})),
   orderFields: PropTypes.shape({}),
-  basket: PropTypes.arrayOf(PropTypes.shape({})),
-  onOrderFieldChange: PropTypes.func.isRequired
+  basket: PropTypes.arrayOf(PropTypes.shape({}))
 };
 
 export default Order;

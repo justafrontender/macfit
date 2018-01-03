@@ -9,25 +9,6 @@ import GoodDetails from '../GoodDetails';
 import Order from '../Order';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      orderFields: this.props.orderFields
-    };
-
-    this.updateOrderField = this.updateOrderField.bind(this);
-  }
-
-  updateOrderField(event) {
-    const { name, value } = event.target;
-
-    this.setState(prevState => {
-      prevState.orderFields[name] = value;
-      return { orderFields: prevState.orderFields };
-    });
-  }
-
   render() {
     return (
       <Router>
@@ -52,8 +33,6 @@ class App extends React.Component {
                   <Order
                     catalog={this.props.catalog}
                     deliveryTypes={this.props.deliveryTypes}
-                    orderFields={this.state.orderFields}
-                    onOrderFieldChange={this.updateOrderField}
                   />
                 )}
               />
