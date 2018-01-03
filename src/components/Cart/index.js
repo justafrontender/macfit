@@ -1,5 +1,6 @@
 import React from 'react';
 import find from 'lodash/find';
+import NavLink from 'react-router-dom/navlink';
 import CartItem from '../CartItem';
 import './style.scss';
 
@@ -12,16 +13,22 @@ class Cart extends React.Component {
 
     return (
       <div className='cart'>
-        <ul className='cart__list'>
-          {basket.map(item => (
-            <CartItem
-              item={item}
-              key={item.productId}
-              onDelete={this.props.onItemDelete}
-              onChangeQuantity={this.props.onChangeQuantity}
-            />
-          ))}
-        </ul>
+        {
+          basket.length ?
+            <ul className='cart__list'>
+              {basket.map(item => (
+                <CartItem
+                  item={item}
+                  key={item.productId}
+                  onDelete={this.props.onItemDelete}
+                  onChangeQuantity={this.props.onChangeQuantity}
+                />
+              ))}
+            </ul> :
+            <span className='cart__empty-text'>
+              В корзине нет ни одного бургера.<br />Надо <NavLink to='/'>добавить</NavLink>!
+            </span>
+        }
 
         <div className='cart-summary'>
           <div className='cart-summary__row'>
