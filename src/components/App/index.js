@@ -6,6 +6,7 @@ import PageFooter from '../PageFooter';
 import Popup from '../Popup';
 import GoodsList from '../GoodsList';
 import GoodDetails from '../GoodDetails';
+import ContactsPage from '../ContactsPage';
 import Order from '../Order';
 
 class App extends React.Component {
@@ -34,6 +35,13 @@ class App extends React.Component {
                     catalog={this.props.catalog}
                     deliveryTypes={this.props.deliveryTypes}
                   />
+                )}
+              />
+
+              <Route
+                path='/contacts/'
+                render={() => (
+                  <ContactsPage contacts={this.props.contacts} />
                 )}
               />
 
