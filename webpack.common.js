@@ -12,7 +12,7 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: ['whatwg-fetch', './src/index.js'],
 
   output: {
     publicPath: '/',
