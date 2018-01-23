@@ -79,6 +79,10 @@
     background-color: transparent;
     box-shadow: none;
 
+    @supports (-webkit-backdrop-filter: blur()) {
+      -webkit-backdrop-filter: none;
+    }
+
     &--visible::before {
       content: none;
     }
