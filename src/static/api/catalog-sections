@@ -1,27 +1,17 @@
 [
   {
     "id": 1,
-    "code": "fitburg",
-    "name": "Фитбурги"
+    "code": "macfit",
+    "name": "MacFit"
   },
   {
     "id": 2,
-    "code": "fitroll",
-    "name": "Фитроллы"
+    "code": "sweet",
+    "name": "Сладости"
   },
   {
     "id": 3,
-    "code": "fitgrill",
-    "name": "Фитгриль"
-  },
-  {
-    "id": 4,
-    "code": "pizza",
-    "name": "Пицца"
-  },
-  {
-    "id": 5,
-    "code": "naggets",
-    "name": "Наггетсы"
+    "code": "eatfit",
+    "name": "EatFit"
   }
 ]
