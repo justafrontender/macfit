@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MacFit - фастфуд, который можно</title>
+  <link rel="manifest" href="/favicons/manifest.json">
+  <link rel="shortcut icon" href="/favicons/favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="shortcut icon" href="/favicons/android-chrome-512x512.png" sizes="512x512" type="image/png">
+  <link rel="shortcut icon" href="/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" sizes="180x180" type="image/png">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#eeaa41" type="image/svg+xml">
+</head>
+<body>
+  <div id="root">
+    <div class="preloader"></div>
+    <style>
+    body {
+      margin: 0;
+    }
+
+    #root {
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .preloader {
+      width: 75vmin;
+      height: 75vmin;
+      max-width: 250px;
+      max-height: 250px;
+      border-radius: 50%;
+      animation-name: initialZoom, bg, zoom;
+      animation-duration: 0.5s, 2.5s, 1.2s;
+      animation-delay: 0s, 0s, 0.5s;
+      -webkit-animation-delay: 0s, 0s, 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1, infinite, infinite;
+      animation-direction: normal, alternate, alternate;
+    }
+
+    @keyframes bg {
+      0% { background-color: #32ac62; }
+
+      50% { background-color: #a07c58; }
+
+      100% { background-color: #eeaa41; }
+    }
+
+    @keyframes initialZoom {
+      from {
+        transform: scale(0);
+      }
+
+      to {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(1.1);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+    </style>
+  </div>
+</body>
+</html>

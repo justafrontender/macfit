@@ -1,0 +1,11 @@
+@import '../../scss/vars.scss';
+
+.goods-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.goods-list__title {
+  @include visually-hidden;
+}

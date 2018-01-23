@@ -1,0 +1,46 @@
+@import '../../scss/vars.scss';
+
+.page-header {
+  position: relative;
+  border-bottom: solid 5px lightgray;
+  @include pane-shadow;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    @supports (-webkit-backdrop-filter: blur()) {
+      background-color: rgba(255, 255, 255, 0.5);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    @include brand-gradient($size: 200px);
+  }
+}
+
+.page-header__container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 55px;
+  padding: 0;
+}
+
+@media #{$desktop-widths} {
+  .page-header__container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

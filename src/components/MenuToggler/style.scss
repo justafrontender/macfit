@@ -1,0 +1,27 @@
+@import '../../scss/vars.scss';
+
+.menu-toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55px;
+  height: 55px;
+  padding: 0;
+  border: none;
+  background: url('./img/dots.svg') 50% no-repeat transparent;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.menu-toggler__counter {
+  position: absolute;
+  top: 5px;
+  right: 26px;
+  z-index: 1;
+}
+
+@media #{$desktop-widths} {
+  .menu-toggler {
+    display: none;
+  }
+}

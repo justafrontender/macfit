@@ -1,0 +1,29 @@
+@import '../../scss/vars.scss';
+
+.radio-group {
+  padding: 10px 0;
+}
+
+.radio-group__name {
+  display: block;
+}
+
+.radio-group__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media #{$mobile-wide-widths} {
+  .radio-group__inner {
+    flex-direction: row;
+  }
+}
+
+@media #{$tablet-widths} {
+  .radio-group__inner {
+    justify-content: flex-start;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+}

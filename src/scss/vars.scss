@@ -1,0 +1,73 @@
+// color presets
+$primary-text-color: #444;
+$menu-color: #000;
+$link-color: #003569;
+$popup-border-color: gray;
+$primary-text-color: #000;
+$popup-control-bg: white;
+
+// screen widths
+$mobile-min-width: 320px;
+$desktop-width: 1000px;
+
+// media queries
+$mobile-vertical-only: #{'(max-width: 567px)'};
+$mobile-wide-widths: #{'(min-width: 568px)'};
+$mobile-wide-only: #{'(min-width: 568px) and (max-width: 767px)'};
+$mobile-only: #{'(max-width: 767px)'};
+
+$tablet-only: #{'(min-width: 768px) and (max-width: 999px)'};
+$tablet-widths: #{'(min-width: 768px)'};
+
+$desktop-widths: #{'(min-width: 1000px)'};
+
+$retina: #{'(min-resolution: 144dpi), (min-resolution: 1.5dppx)'};
+
+// z-indexes
+$menu-z-index: 10;
+$popup-z-index: 15;
+
+// mixins
+@mixin visually-hidden () {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+}
+
+@mixin popup-shadow () {
+  box-shadow: 0 0 7px rgba(0, 0, 0, .14), 0 10px 15px rgba(0, 0, 0, .28);
+}
+
+@mixin pane-shadow () {
+  box-shadow: 0 0 2px rgba(0, 0, 0, .14), 0 2px 4px rgba(0, 0, 0, .28);
+}
+
+@mixin light-shadow () {
+  box-shadow: 0 0 1px rgba(0, 0, 0, .14), 0 1px 2px rgba(0, 0, 0, .28);
+}
+
+@mixin brand-gradient ($size: 100px, $deg: 122deg, $desaturate: 0, $lighten: 0) {
+  background-image: repeating-linear-gradient(
+    $deg,
+    lighten(desaturate(#309e4a, $desaturate), $lighten) 4.65 * $size / 100,
+    lighten(desaturate(#32ac62, $desaturate), $lighten) 4.65 * $size / 100,
+    lighten(desaturate(#32ac62, $desaturate), $lighten) 24.37 * $size / 100,
+    lighten(desaturate(#776d42, $desaturate), $lighten) 24.37 * $size / 100,
+    lighten(desaturate(#776d42, $desaturate), $lighten) 30.80 * $size / 100,
+    lighten(desaturate(#a07c58, $desaturate), $lighten) 30.80 * $size / 100,
+    lighten(desaturate(#a07c58, $desaturate), $lighten) 50.68 * $size / 100,
+    lighten(desaturate(#de9e41, $desaturate), $lighten) 50.68 * $size / 100,
+    lighten(desaturate(#de9e41, $desaturate), $lighten) 55.25 * $size / 100,
+    lighten(desaturate(#f1b759, $desaturate), $lighten) 55.25 * $size / 100,
+    lighten(desaturate(#f1b759, $desaturate), $lighten) 74.79 * $size / 100,
+    lighten(desaturate(#eeaa41, $desaturate), $lighten) 74.79 * $size / 100,
+    lighten(desaturate(#eeaa41, $desaturate), $lighten) 81.81 * $size / 100,
+    lighten(desaturate(#f1b759, $desaturate), $lighten) 81.81 * $size / 100,
+    lighten(desaturate(#f1b759, $desaturate), $lighten) 100 * $size / 100
+  );
+}

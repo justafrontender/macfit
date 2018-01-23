@@ -1,0 +1,237 @@
+
+[
+    {
+        "id": "7566",
+        "code": "fitburg-klassik",
+        "catalogSection": null,
+        "name": "Фитбург Классик",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "160",
+        "weight": "230",
+        "description": "Цельнозерновая бездрожжевая булка\r\nнатуральная куриная котлета «EatFit»*2\r\nсыр «Сулугуни»*2\r\nйогуртовый соус\r\nпекинская капуста\r\nперец болгарский\r\nкорнишон\r\nкетчуп\r\nлук маринованный\r\nзелень\""
+    },
+    {
+        "id": "7567",
+        "code": "fitburg-fulkhaus",
+        "catalogSection": null,
+        "name": "Фитбург Фулхаус",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "200",
+        "weight": "280",
+        "description": ""
+    },
+    {
+        "id": "7568",
+        "code": "fitburg-xxl",
+        "catalogSection": null,
+        "name": "Фитбург XXL",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "260",
+        "weight": "380",
+        "description": ""
+    },
+    {
+        "id": "7569",
+        "code": "fitburg-fitboss",
+        "catalogSection": null,
+        "name": "Фитбург Фитбосс",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "350",
+        "weight": "430",
+        "description": ""
+    },
+    {
+        "id": "7570",
+        "code": "fitburg-frantse",
+        "catalogSection": null,
+        "name": "Фитбург Францэ",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "220",
+        "weight": "240",
+        "description": ""
+    },
+    {
+        "id": "7571",
+        "code": "fitburg-grindey",
+        "catalogSection": null,
+        "name": "Фитбург Гриндэй",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "210",
+        "weight": "280",
+        "description": ""
+    },
+    {
+        "id": "7572",
+        "code": "fitroll-raz",
+        "catalogSection": null,
+        "name": "Фитролл Раз",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "240",
+        "weight": "470",
+        "description": ""
+    },
+    {
+        "id": "7573",
+        "code": "fitroll-dva",
+        "catalogSection": null,
+        "name": "Фитролл Два",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "220",
+        "weight": "420",
+        "description": ""
+    },
+    {
+        "id": "7574",
+        "code": "fitgril-s-kurinym-file-i-frantsuzskoy-gorchitsey",
+        "catalogSection": null,
+        "name": "Фитгриль с куриным филе и французской горчицей",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "245",
+        "weight": "390",
+        "description": ""
+    },
+    {
+        "id": "7575",
+        "code": "fitgril-s-kurinym-file-i-ovoshchami",
+        "catalogSection": null,
+        "name": "Фитгриль с куриным филе и овощами",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "245",
+        "weight": "370",
+        "description": ""
+    },
+    {
+        "id": "7576",
+        "code": "pitstsa-myasnaya",
+        "catalogSection": null,
+        "name": "Пицца мясная",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "650",
+        "weight": "650",
+        "description": ""
+    },
+    {
+        "id": "7577",
+        "code": "pitstsa-ovoshchnaya",
+        "catalogSection": null,
+        "name": "Пицца овощная",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "550",
+        "weight": "650",
+        "description": ""
+    },
+    {
+        "id": "7578",
+        "code": "naggetsy-6-sht",
+        "catalogSection": null,
+        "name": "Наггетсы 6 шт.",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "195",
+        "weight": "",
+        "description": ""
+    }
+]

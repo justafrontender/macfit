@@ -1,0 +1,14 @@
+@import '../../scss/vars.scss';
+
+.footer-contacts__link {
+  font-weight: bold;
+  color: $menu-color;
+
+  &--phone {
+    font-size: 18px;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+}

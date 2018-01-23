@@ -1,0 +1,12 @@
+@import '../../scss/vars.scss';
+
+.copyright {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.copyright__link {
+  font-weight: bold;
+  text-decoration: none;
+  color: $menu-color;
+}

@@ -1,0 +1,13 @@
+@import '../../scss/vars.scss';
+
+.container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.container--space {
+  padding-left: 15px;
+  padding-right: 15px;
+}

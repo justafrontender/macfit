@@ -1,0 +1,53 @@
+@import '../../scss/vars.scss';
+
+.good-details {
+  width: 100%;
+  overflow: scroll;
+}
+
+.good-details__image {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  picture {
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.good-details__infopane {
+  position: relative;
+  padding: 10px;
+}
+
+.good-details__title {
+  margin: 5px 0 10px;
+  font-size: 15px;
+}
+
+.good-details__description {
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.good-details__cart-btn {
+  width: 100%;
+}
+
+@media #{$tablet-widths} {
+  .good-details {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .good-details__infopane {
+    position: static;
+    overflow: scroll;
+  }
+}
