@@ -7,11 +7,10 @@ const PageFooter = ({ contacts }) => (
     <div className='container container--space page-footer__container'>
       <section className='footer-contacts'>
         <p>
-          Краснодар<br />
-          ул. Индустриальная, 3<br />
+          {contacts.address}<br />
           <a
             className='footer-contacts__link footer-contacts__link--phone'
-            href='tel:+79604801401'
+            href={`tel:${contacts.phone}`}
           >
             {contacts.phone}
           </a>
