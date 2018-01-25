@@ -3,5 +3,9 @@ language: node_js
 node_js:
   - "8.2"
 
+install: "npm i"
+
+before_script: "npm run build"
+
 notifications:
   email: false
