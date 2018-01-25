@@ -1,5 +1,5 @@
 import React from 'react';
-import NavLink from 'react-router-dom/navlink';
+import NavLink from 'react-router-dom/NavLink';
 import PropTypes from 'prop-types';
 import b from '../../lib/b';
 import hash from '../../lib/hash';
