@@ -1,32 +1,9 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
-const plumber = require('gulp-plumber');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
 
-const csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const svgmin = require('gulp-svgmin');
 const svgstore = require('gulp-svgstore');
-
-gulp.task('style', () => {
-  return gulp.src('sass/style.scss')
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(postcss([
-      autoprefixer({
-        browsers: [
-          'last 2 versions',
-          'iOS 8'
-        ]
-      })
-    ]))
-    .pipe(gulp.dest('static/css'))
-    .pipe(csso())
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('static/css'));
-});
 
 gulp.task('images', () => {
   return gulp.src('img/**/*.{png,jpg,gif}')

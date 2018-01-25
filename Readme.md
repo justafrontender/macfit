@@ -16,7 +16,7 @@
 - [x] Изменение количества товара в корзине;
 - [ ] [Правильные модальные окна для детальной страницы продукта](https://reacttraining.com/react-router/web/example/modal-gallery);
 - [ ] Каталог по разделам;
-- [ ] Autoprefixer и csso;
+- [x] Autoprefixer и csso;
 - [ ] Обработка картинок;
 - [ ] Redux;
 - [x] Корзина в LocalStorage;
