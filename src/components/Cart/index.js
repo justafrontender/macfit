@@ -1,6 +1,6 @@
 import React from 'react';
 import find from 'lodash/find';
-import NavLink from 'react-router-dom/navlink';
+import NavLink from 'react-router-dom/NavLink';
 import CartItem from '../CartItem';
 import './style.scss';
 
