@@ -1,41 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { addItem } from '../../actions/cart';
 import GoodTile from '../GoodTile';
 import './style.scss';
 
 class GoodsList extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.store = this.context.store;
-
-    this.handleAddToCart = this.handleAddToCart.bind(this);
-  }
-
-  componentDidMount() {
-    this.unsubscribeStore = this.store.subscribe(() => this.forceUpdate());
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeStore();
-  }
-
-  handleAddToCart(productId) {
-    this.store.dispatch(addItem(productId, 1));
-  }
-
   render() {
+    const { heading, catalog, onAddToCart } = this.props;
+
     return (
       <section className='goods-list'>
-        <h2 className='goods-list__title'>{this.props.heading}</h2>
+        <h2 className='goods-list__title'>{heading}</h2>
 
-        {this.props.catalog.map(item => {
+        {catalog.map(item => {
           return (
             <GoodTile
               good={item}
               key={item.id}
-              onAddToCart={this.handleAddToCart}
+              onAddToCart={onAddToCart}
             />
           );
         })}
@@ -43,10 +26,6 @@ class GoodsList extends React.Component {
     );
   }
 }
-
-GoodsList.contextTypes = {
-  store: PropTypes.shape({})
-};
 
 GoodsList.propTypes = {
   heading: PropTypes.string,
@@ -63,4 +42,6 @@ GoodsList.defaultProps = {
   heading: 'Меню MacFit',
 };
 
-export default GoodsList;
+const mapDispatchToProps = dispatch => ({ onAddToCart: id => dispatch(addItem(id)) });
+
+export default connect(false, mapDispatchToProps)(GoodsList);

@@ -1,31 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Logo from '../Logo';
 import MenuToggler from '../MenuToggler';
 import MainNav from '../MainNav';
 import './style.scss';
 
 class PageHeader extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.store = this.context.store;
-
-    this.state = {
-      menuOpened: this.props.menuOpenedInitially
-    };
+  constructor(props) {
+    super(props);
 
     this.menuToggle = this.menuToggle.bind(this);
     this.menuClose = this.menuClose.bind(this);
   }
 
-  componentDidMount() {
-    this.unsubscribeStore = this.store.subscribe(() => this.forceUpdate());
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeStore();
-  }
+  state = {
+    menuOpened: this.props.menuOpenedInitially
+  };
 
   menuToggle() {
     this.setState(prevState => ({ menuOpened: !prevState.menuOpened }));
@@ -36,7 +27,8 @@ class PageHeader extends React.Component {
   }
 
   render() {
-    const counter = this.store.getState().cart.reduce(
+    const { cart, siteMenu } = this.props;
+    const counter = cart.reduce(
       (sum, item) => sum + item.quantity,
       0
     );
@@ -47,7 +39,7 @@ class PageHeader extends React.Component {
           <Logo />
           <MenuToggler onClick={this.menuToggle} counter={counter} />
           <MainNav
-            menuItems={this.props.siteMenu}
+            menuItems={siteMenu}
             menuOpened={this.state.menuOpened}
             onClick={this.menuClose}
             counter={counter}
@@ -58,10 +50,6 @@ class PageHeader extends React.Component {
   }
 }
 
-PageHeader.contextTypes = {
-  store: PropTypes.shape({})
-};
-
 PageHeader.propTypes = {
   menuOpenedInitially: PropTypes.bool
 };
@@ -70,4 +58,6 @@ PageHeader.defaultProps = {
   menuOpenedInitially: false
 };
 
-export default PageHeader;
+const mapStateToProps = state => ({ cart: state.cart });
+
+export default connect(mapStateToProps, null, null, { pure: false })(PageHeader);

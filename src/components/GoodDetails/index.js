@@ -1,36 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import find from 'lodash/find';
 import findIndex from 'lodash/findIndex';
 import Redirect from 'react-router-dom/Redirect';
+import { connect } from 'react-redux';
 import { addItem } from '../../actions/cart';
 import Btn from '../Btn';
 import './style.scss';
 
 class GoodDetails extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.store = this.context.store;
+  constructor(props) {
+    super(props);
     this.good = find(this.props.catalog, ['code', this.props.match.params.productCode]);
-
-    this.handleAddToCart = this.handleAddToCart.bind(this);
-  }
-
-  componentDidMount() {
-    this.unsubscribeStore = this.store.subscribe(() => this.forceUpdate());
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeStore();
-  }
-
-  handleAddToCart() {
-    this.store.dispatch(addItem(this.good.id, 1));
   }
 
   render() {
-    const isAdded = findIndex(this.store.getState().cart, ['productId', this.good.id]);
+    const { cart, onAddToCart } = this.props;
+    const isAdded = findIndex(cart, ['productId', this.good.id]);
 
     if (!this.good) {
       return <Redirect to='/' />;
@@ -72,7 +57,7 @@ class GoodDetails extends React.Component {
             bemMod='to-cart'
             type='button'
             title='Добавить в заказ'
-            onClick={this.handleAddToCart}
+            onClick={() => onAddToCart(this.good.id)}
           >
             {isAdded === -1 ? 'Добавить в заказ' : 'Добавить еще один'}
           </Btn>
@@ -82,8 +67,7 @@ class GoodDetails extends React.Component {
   }
 }
 
-GoodDetails.contextTypes = {
-  store: PropTypes.shape({})
-};
+const mapStateToProps = state => ({ cart: state.cart });
+const mapDispatchToProps = dispatch => ({ onAddToCart: id => dispatch(addItem(id)) });
 
-export default GoodDetails;
+export default connect(mapStateToProps, mapDispatchToProps)(GoodDetails);
