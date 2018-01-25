@@ -3,10 +3,6 @@
   "version": "0.2.0",
   "private": true,
   "description": "Фронтенд на React для фастфуда MacFit",
-  "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1"
-  },
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "^6.7.7",
@@ -38,6 +34,8 @@
     "node-sass": "^4.7.1",
     "postcss-csso": "^3.0.0",
     "postcss-loader": "^2.0.10",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
     "react-hot-loader": "^3.1.3",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
