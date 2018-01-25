@@ -1,74 +1,102 @@
 import React from 'react';
 import Link from 'react-router-dom/Link';
+import CircleBtn from '../CircleBtn';
+import './style.scss';
 
 class CartItem extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleIncreaseQuantity = this.handleIncreaseQuantity.bind(this);
+    this.handleDecreaseQuantity = this.handleDecreaseQuantity.bind(this);
   }
 
   handleDelete() {
-    this.props.onDelete(this.props.basketItem.id);
+    this.props.onDelete(this.props.item.productId);
+  }
+
+  handleIncreaseQuantity() {
+    this.props.onChangeQuantity(this.props.item.productId, 1);
+  }
+
+  handleDecreaseQuantity() {
+    this.props.onChangeQuantity(this.props.item.productId, -1);
   }
 
   render() {
     return (
       <li className='cart-item'>
-        <Link className='cart-item__image' to={`/product/${this.props.basketItem.good.code}`} tabIndex='-1'>
-          <img src={this.props.basketItem.good.pictures[0]} alt={this.props.basketItem.good.name} />
+        <Link className='cart-item__link' to={`/product/${this.props.item.good.code}`} tabIndex='-1'>
+          <picture>
+            <source
+              media='(min-width: 768px)'
+              srcSet={`${this.props.item.good.pictures[0].w368} 1x, ${this.props.item.good.pictures[0].w602} 2x`}
+            />
+            <img
+              className='cart-item__image'
+              src={this.props.item.good.pictures[0].w184}
+              srcSet={`${this.props.item.good.pictures[0].w368} 2x`}
+              alt={`Фотография ${this.props.item.good.name}`}
+            />
+          </picture>
         </Link>
 
         <div className='cart-item__specs'>
           <Link
             className='cart-item__title'
-            to={`/product/${this.props.basketItem.good.code}`}
+            to={`/product/${this.props.item.good.code}`}
           >
-            {this.props.basketItem.good.name}
+            {this.props.item.good.name}
           </Link>
           <div className='price-tag'>
-            <span className='price-tag__price'>{this.props.basketItem.good.price}р.</span>
-            <span className='price-tag__weight'>{this.props.basketItem.good.weight}гр.</span>
+            <span className='price-tag__price'>{this.props.item.good.price}р.</span>
+            <span className='price-tag__weight'>{this.props.item.good.weight}гр.</span>
           </div>
         </div>
 
-        <button
-          className='circle-btn circle-btn--small circle-btn--x cart-item__btn-remove'
+        <CircleBtn
+          className='cart-item__btn-remove'
+          bemMod={['small', 'x']}
           type='button'
           title='Удалить из заказа'
           onClick={this.handleDelete}
         >
           Удалить из заказа
-        </button>
+        </CircleBtn>
         <label className='field-number'>
           <input
             className='field-number__input'
             type='text'
-            value={`${this.props.basketItem.quantity} шт.`}
+            value={`${this.props.item.quantity} шт.`}
             data-min='1'
             data-suffix=' шт.'
-            data-value={this.props.basketItem.quantity}
+            data-value={this.props.item.quantity}
             data-step='1'
             readOnly
           />
-          <button
-            className='field-number__btn-less circle-btn circle-btn--small circle-btn--minus'
+          <CircleBtn
+            className='field-number__btn-less'
+            bemMod={['small', 'minus']}
             type='button'
             data-action='decrease'
             title='Уменьшить количество'
             tabIndex='-1'
+            onClick={this.handleDecreaseQuantity}
           >
             -
-          </button>
-          <button
-            className='field-number__btn-more circle-btn circle-btn--small circle-btn--plus'
+          </CircleBtn>
+          <CircleBtn
+            className='field-number__btn-more'
+            bemMod={['small', 'plus']}
             type='button'
             data-action='increase'
             title='Увеличить количество'
             tabIndex='-1'
+            onClick={this.handleIncreaseQuantity}
           >
             +
-          </button>
+          </CircleBtn>
         </label>
       </li>
     );

@@ -1,3 +1,5 @@
+@import '../../scss/vars.scss';
+
 .price-tag {
   position: absolute;
   top: -45px;
@@ -73,8 +75,6 @@
 
 @media #{$desktop-widths} {
   .price-tag {
-    top: -60px;
-
     .price-tag__price {
       font-size: 26px;
     }

@@ -1,4 +1,6 @@
 import React from 'react';
+import CircleBtn from '../CircleBtn';
+import './style.scss';
 
 class Popup extends React.Component {
   constructor(props) {
@@ -29,7 +31,7 @@ class Popup extends React.Component {
       <div className='popup popup--visible'>
         <div className='popup__inner'>
           <div className='popup__controls'>
-            <button className='circle-btn circle-btn--x' type='button' onClick={this.onClose}>Закрыть</button>
+            <CircleBtn bemMod='x' type='button' onClick={this.onClose}>Закрыть</CircleBtn>
           </div>
           {this.props.children}
         </div>

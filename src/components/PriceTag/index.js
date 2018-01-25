@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './style.scss';
 
 const PriceTag = ({ price, weight }) => (
   <div className='price-tag'>
@@ -9,8 +10,8 @@ const PriceTag = ({ price, weight }) => (
 );
 
 PriceTag.propTypes = {
-  price: PropTypes.number.isRequired,
-  weight: PropTypes.number
+  price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  weight: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 PriceTag.defaultProps = {

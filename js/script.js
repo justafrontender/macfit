@@ -40,34 +40,3 @@
       return _overlay.scrollHeight - _overlay.scrollTop <= _overlay.clientHeight;
   }
 }());
-
-// quantity input
-(function() {
-  var buttons = document.querySelectorAll('.js__field-number--modify');
-
-  if (!buttons) return false;
-
-  for (var i = 0; i < buttons.length; i++)
-    buttons[i].addEventListener('click', modifyFieldNumber);
-
-  function modifyFieldNumber(e) {
-    e.preventDefault();
-    var action = e.target.attributes['data-action'].value,
-    input = e.target.parentNode.querySelector('input.field-number__input'),
-    step = parseFloat(input.getAttribute('data-step')) || 1,
-    min = parseFloat(input.getAttribute('data-min')) || undefined,
-    suffix = input.getAttribute('data-suffix') || '';
-
-    if (action == 'increase')
-      var newValue = parseFloat(input.getAttribute('data-value')) + step;
-    else if (action == 'decrease') {
-      var newValue = parseFloat(input.getAttribute('data-value')) - step;
-    }
-
-    if (newValue < min && min !== undefined)
-      newValue = min;
-
-    input.setAttribute('data-value', newValue);
-    input.value = newValue + suffix;
-  }
-}());

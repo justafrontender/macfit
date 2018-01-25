@@ -1,4 +1,7 @@
+@import '../../scss/vars.scss';
+
 .good-details {
+  width: 100%;
   overflow: scroll;
 }
 
@@ -6,6 +9,10 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+
+  picture {
+    width: 100%;
+  }
 
   img {
     display: block;
@@ -26,6 +33,7 @@
 .good-details__description {
   line-height: 1.5;
   white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .good-details__cart-btn {
@@ -39,7 +47,14 @@
     overflow: hidden;
   }
 
+  .good-details__image {
+    flex-shrink: 0;
+    width: 600px;
+  }
+
   .good-details__infopane {
     position: static;
+    flex-grow: 1;
+    overflow: scroll;
   }
 }

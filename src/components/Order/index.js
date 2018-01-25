@@ -1,34 +1,56 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import find from 'lodash/find';
+import { connect } from 'react-redux';
+import { changeQuantity, deleteItem } from '../../actions/cart';
+import { update } from '../../actions/order';
 import Cart from '../Cart';
 import FieldText from '../FieldText';
 import RadioGroup from '../RadioGroup';
 import Radio from '../Radio';
 import PageTitle from '../PageTitle';
+import Btn from '../Btn';
+import './style.scss';
 
 class Order extends React.Component {
+  getBasketTotals() {
+    return this.props.cart.reduce(
+      (sum, item) => {
+        const good = find(this.props.catalog, i => i.id === item.productId);
+        sum.count += item.quantity;
+        sum.price += good.price * item.quantity;
+        return sum;
+      },
+      { count: 0, price: 0 }
+    );
+  }
+
   render() {
+    const { cart, order, catalog, deliveryTypes, onItemDelete, onChangeQuantity, onFieldChange } = this.props;
+
     return (
       <form className='order' method='post'>
         <PageTitle>Ваш заказ</PageTitle>
 
         <Cart
-          basket={this.props.basket}
-          basketTotals={this.props.basketTotals}
-          onCartItemDelete={this.props.onCartItemDelete}
+          catalog={catalog}
+          basket={cart}
+          basketTotals={this.getBasketTotals()}
+          onItemDelete={onItemDelete}
+          onChangeQuantity={onChangeQuantity}
         />
 
         <div className='order__fields'>
           <RadioGroup
             title='Доставка:'
             name='deliveryType'
-            onChange={this.props.onOrderFieldChange}
+            onChange={onFieldChange}
           >
-            {this.props.deliveryTypes.map(deliveryType => (
+            {deliveryTypes.map(deliveryType => (
               <Radio
                 key={deliveryType.id}
                 value={deliveryType.id}
-                checked={deliveryType.id === this.props.orderFields.deliveryType}
+                checked={deliveryType.id === order.deliveryType}
               >
                 {deliveryType.name}
               </Radio>
@@ -41,8 +63,8 @@ class Order extends React.Component {
             type='tel'
             name='phoneNumber'
             placeholder='+79189999999'
-            value={this.props.orderFields.phoneNumber}
-            onChange={this.props.onOrderFieldChange}
+            value={order.phoneNumber}
+            onChange={onFieldChange}
           />
 
           <FieldText
@@ -51,11 +73,11 @@ class Order extends React.Component {
             type='textarea'
             name='note'
             placeholder='Например: пиццу сделайте острее, а фитбург без французской горчицы'
-            value={this.props.orderFields.note}
-            onChange={this.props.onOrderFieldChange}
+            value={order.note}
+            onChange={onFieldChange}
           />
 
-          <button className='btn order__submit' type='button'>Сделать заказ</button>
+          <Btn className='order__submit' type='button'>Сделать заказ</Btn>
         </div>
       </form>
     );
@@ -65,8 +87,20 @@ class Order extends React.Component {
 Order.propTypes = {
   deliveryTypes: PropTypes.arrayOf(PropTypes.shape({})),
   orderFields: PropTypes.shape({}),
-  basket: PropTypes.arrayOf(PropTypes.shape({})),
-  onOrderFieldChange: PropTypes.func.isRequired
+  basket: PropTypes.arrayOf(PropTypes.shape({}))
 };
 
-export default Order;
+const mapStateToProps = state => ({
+  cart: state.cart,
+  order: state.order
+});
+const mapDispatchToProps = dispatch => ({
+  onItemDelete: productId => dispatch(deleteItem(productId)),
+  onChangeQuantity: (productId, amount) => dispatch(changeQuantity(productId, amount)),
+  onFieldChange: event => {
+    const { name, value } = event.target;
+    dispatch(update(name, value));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Order);

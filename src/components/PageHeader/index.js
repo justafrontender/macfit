@@ -1,35 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Logo from '../Logo';
 import MenuToggler from '../MenuToggler';
 import MainNav from '../MainNav';
+import './style.scss';
 
 class PageHeader extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      menuOpened: this.props.menuOpenedInitially
-    };
-
-    this.menuToggle = this.handleClick.bind(this);
+    this.menuToggle = this.menuToggle.bind(this);
+    this.menuClose = this.menuClose.bind(this);
   }
 
-  handleClick() {
-    this.setState({ menuOpened: !this.state.menuOpened });
+  state = {
+    menuOpened: this.props.menuOpenedInitially
+  };
+
+  menuToggle() {
+    this.setState(prevState => ({ menuOpened: !prevState.menuOpened }));
+  }
+
+  menuClose() {
+    this.setState(prevState => ({ menuOpened: prevState ? false : null }));
   }
 
   render() {
+    const { cart, siteMenu } = this.props;
+    const counter = cart.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+
     return (
       <header className='page-header page-header--fixed'>
         <div className='container page-header__container'>
           <Logo />
-          <MenuToggler onClick={this.menuToggle} counter={this.props.basketItems} />
+          <MenuToggler onClick={this.menuToggle} counter={counter} />
           <MainNav
-            menuItems={this.props.siteMenu}
+            menuItems={siteMenu}
             menuOpened={this.state.menuOpened}
-            onClick={this.menuToggle}
-            counter={this.props.basketItems}
+            onClick={this.menuClose}
+            counter={counter}
           />
         </div>
       </header>
@@ -45,4 +58,6 @@ PageHeader.defaultProps = {
   menuOpenedInitially: false
 };
 
-export default PageHeader;
+const mapStateToProps = state => ({ cart: state.cart });
+
+export default connect(mapStateToProps, null, null, { pure: false })(PageHeader);

@@ -1,3 +1,5 @@
+@import '../../scss/vars.scss';
+
 .main-nav {
   position: relative;
   flex-grow: 1;
@@ -61,4 +63,50 @@
   padding: 2px 6px;
   margin-top: -3px;
   margin-left: 10px;
+}
+
+@media #{$desktop-widths} {
+  .main-nav {
+    flex-grow: 0;
+    width: auto;
+    background-color: transparent;
+  }
+
+  .main-nav__list {
+    position: static;
+    display: flex;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+
+    @supports (-webkit-backdrop-filter: blur()) {
+      -webkit-backdrop-filter: none;
+    }
+
+    &--visible::before {
+      content: none;
+    }
+  }
+
+  .main-nav__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 5px 15px;
+    border: solid 1px transparent;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    &--active {
+      border-color: #df9e41;
+      background-color: transparent;
+    }
+  }
+
+  .main-nav__counter {
+    position: relative;
+    display: inline-block;
+    margin-top: 0;
+  }
 }

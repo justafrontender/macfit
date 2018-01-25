@@ -1,22 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addItem } from '../../actions/cart';
 import GoodTile from '../GoodTile';
+import './style.scss';
 
-const GoodsList = props => (
-  <section className='goods-list'>
-    <h2 className='goods-list__title'>{props.heading}</h2>
+class GoodsList extends React.Component {
+  render() {
+    const { heading, catalog, onAddToCart } = this.props;
 
-    {props.goods.map(item => {
-      return (
-        <GoodTile
-          good={item}
-          key={item.id}
-          onAddToCart={props.onAddToCart}
-        />
-      );
-    })}
-  </section>
-);
+    return (
+      <section className='goods-list'>
+        <h2 className='goods-list__title'>{heading}</h2>
+
+        {catalog.map(item => {
+          return (
+            <GoodTile
+              good={item}
+              key={item.id}
+              onAddToCart={onAddToCart}
+            />
+          );
+        })}
+      </section>
+    );
+  }
+}
 
 GoodsList.propTypes = {
   heading: PropTypes.string,
@@ -33,4 +42,6 @@ GoodsList.defaultProps = {
   heading: 'Меню MacFit',
 };
 
-export default GoodsList;
+const mapDispatchToProps = dispatch => ({ onAddToCart: id => dispatch(addItem(id)) });
+
+export default connect(false, mapDispatchToProps)(GoodsList);
