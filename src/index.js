@@ -16,6 +16,27 @@ import './favicons';
 // temporarely include backend stub
 import './static/api';
 
+const getInitialData = () => new Promise((resolve, reject) => {
+  const data = {};
+
+  const urls = {
+    catalog: '/api/catalog',
+    catalogSections: '/api/catalogSections'
+  };
+
+  ['catalog', 'catalogSections'].forEach((item, i) => {
+    fetch(urls[item])
+      .then(response => response.json())
+      .then(obj => {
+        data[item] = obj;
+        if (i === 1) {
+          resolve(data);
+        }
+      })
+      .catch(e => reject(e));
+  });
+});
+
 const store = createStore(reducer);
 const storage = createStorage(store);
 
@@ -25,14 +46,17 @@ store.subscribe(() => storage.save('cart'));
 document.addEventListener(
   'DOMContentLoaded',
   () => {
-    fetch('/api/catalog')
-      .then(response => response.json())
-      .then(catalog => {
+    getInitialData()
+      .then(data => {
+        return data;
+      })
+      .then(data => {
         ReactDOM.render(
           <Provider store={store}>
             <Router>
               <App
-                catalog={catalog}
+                catalog={data.catalog}
+                catalogSections={data.catalogSections}
                 deliveryTypes={deliveryTypes}
                 contacts={contacts}
                 siteMenu={siteMenu}
