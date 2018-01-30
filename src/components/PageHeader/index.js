@@ -27,10 +27,18 @@ class PageHeader extends React.Component {
   }
 
   render() {
-    const { cart, siteMenu } = this.props;
+    const { cart, siteMenu, catalogSections } = this.props;
     const counter = cart.reduce(
       (sum, item) => sum + item.quantity,
       0
+    );
+
+    const menuItems = [].concat(
+      catalogSections.map(section => ({
+        name: section.name,
+        href: `/${section.code}`
+      })),
+      siteMenu
     );
 
     return (
@@ -39,7 +47,7 @@ class PageHeader extends React.Component {
           <Logo />
           <MenuToggler onClick={this.menuToggle} counter={counter} />
           <MainNav
-            menuItems={siteMenu}
+            menuItems={menuItems}
             menuOpened={this.state.menuOpened}
             onClick={this.menuClose}
             counter={counter}
@@ -51,11 +59,15 @@ class PageHeader extends React.Component {
 }
 
 PageHeader.propTypes = {
-  menuOpenedInitially: PropTypes.bool
+  menuOpenedInitially: PropTypes.bool,
+  catalogSections: PropTypes.arrayOf(PropTypes.shape({})),
+  siteMenu: PropTypes.arrayOf(PropTypes.shape({}))
 };
 
 PageHeader.defaultProps = {
-  menuOpenedInitially: false
+  menuOpenedInitially: false,
+  catalogSections: [],
+  siteMenu: []
 };
 
 const mapStateToProps = state => ({ cart: state.cart });

@@ -11,9 +11,11 @@ import Order from '../Order';
 
 class App extends React.Component {
   render() {
+    const { siteMenu, catalogSections, catalog, deliveryTypes, contacts } = this.props;
+
     return (
       <div>
-        <PageHeader siteMenu={this.props.siteMenu} />
+        <PageHeader siteMenu={siteMenu} catalogSections={catalogSections} />
 
         <PageContent>
           <Switch>
@@ -22,7 +24,7 @@ class App extends React.Component {
               path='/'
               render={() => (
                 <GoodsList
-                  catalog={this.props.catalog}
+                  catalog={catalog}
                 />
               )}
             />
@@ -31,8 +33,8 @@ class App extends React.Component {
               path='/order/'
               render={() => (
                 <Order
-                  catalog={this.props.catalog}
-                  deliveryTypes={this.props.deliveryTypes}
+                  catalog={catalog}
+                  deliveryTypes={deliveryTypes}
                 />
               )}
             />
@@ -40,7 +42,7 @@ class App extends React.Component {
             <Route
               path='/contacts/'
               render={() => (
-                <ContactsPage contacts={this.props.contacts} />
+                <ContactsPage contacts={contacts} />
               )}
             />
 
@@ -48,7 +50,7 @@ class App extends React.Component {
               path='/product/:productCode/'
               render={() => (
                 <GoodsList
-                  catalog={this.props.catalog}
+                  catalog={catalog}
                 />
               )}
             />
@@ -59,14 +61,14 @@ class App extends React.Component {
           </Switch>
         </PageContent>
 
-        <PageFooter contacts={this.props.contacts} />
+        <PageFooter contacts={contacts} />
 
         <Route
           path='/product/:productCode/'
           render={props => (
             <Popup history={props.history}>
               <GoodDetails
-                catalog={this.props.catalog}
+                catalog={catalog}
                 {...props}
               />
             </Popup>
