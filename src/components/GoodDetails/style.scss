@@ -2,7 +2,7 @@
 
 .good-details {
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .good-details__image {
@@ -55,6 +55,6 @@
   .good-details__infopane {
     position: static;
     flex-grow: 1;
-    overflow: scroll;
+    overflow: auto;
   }
 }

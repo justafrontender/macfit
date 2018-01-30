@@ -28,7 +28,8 @@ class Popup extends React.Component {
 
   render() {
     return (
-      <div className='popup popup--visible'>
+      // eslint-disable-next-line
+      <div className='popup popup--visible' onClick={this.onClose}>
         <div className='popup__inner'>
           <div className='popup__controls'>
             <CircleBtn bemMod='x' type='button' onClick={this.onClose}>Закрыть</CircleBtn>
