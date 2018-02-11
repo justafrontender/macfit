@@ -22,16 +22,12 @@ class App extends React.Component {
             <Route
               exact
               path='/'
-              render={() => (
-                <GoodsList />
-              )}
+              render={() => <GoodsList />}
             />
 
             <Route
               path='/order/'
-              render={() => (
-                <Order deliveryTypes={deliveryTypes} />
-              )}
+              render={() => <Order deliveryTypes={deliveryTypes} />}
             />
 
             <Route
@@ -43,9 +39,12 @@ class App extends React.Component {
 
             <Route
               path='/product/:productCode/'
-              render={() => (
-                <GoodsList />
-              )}
+              render={() => <GoodsList />}
+            />
+
+            <Route
+              path='/:sectionCode'
+              render={({ history, match }) => <GoodsList history={history} match={match} />}
             />
 
             <Route
