@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from 'react-router-dom/BrowserRouter';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import reducer from './reducers';
 import { restore as restoreCart } from './actions/cart';
 import { get as getCatalog } from './actions/catalog';
 import { get as getCatalogSections } from './actions/catalogSections';
 
+import store from './store';
 import createStorage from './lib/localstorage.js';
 import deliveryTypes from './data/deliveryTypes';
 import catalogApi from './server/catalog';
@@ -34,7 +33,6 @@ const getInitialData = dispatch => Promise.all([
     })
 ]);
 
-const store = createStore(reducer);
 const storage = createStorage(store);
 
 storage.restore('cart', restoreCart);
