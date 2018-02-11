@@ -17,7 +17,10 @@ class Popup extends React.Component {
     document.body.classList.remove('body-fixed');
   }
 
-  onClose() {
+  onClose(evt) {
+    if (evt.target !== evt.currentTarget) {
+      return false;
+    }
     if (this.props.history.action === 'PUSH') {
       this.props.history.goBack();
     }

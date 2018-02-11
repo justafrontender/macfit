@@ -42,6 +42,7 @@ GoodsList.defaultProps = {
   heading: 'Меню MacFit',
 };
 
+const mapStateToProps = state => ({ catalog: state.catalog });
 const mapDispatchToProps = dispatch => ({ onAddToCart: id => dispatch(addItem(id)) });
 
-export default connect(false, mapDispatchToProps)(GoodsList);
+export default connect(mapStateToProps, mapDispatchToProps)(GoodsList);

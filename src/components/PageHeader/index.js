@@ -70,6 +70,6 @@ PageHeader.defaultProps = {
   siteMenu: []
 };
 
-const mapStateToProps = state => ({ cart: state.cart });
+const mapStateToProps = state => ({ cart: state.cart, catalogSections: state.catalogSections });
 
 export default connect(mapStateToProps, null, null, { pure: false })(PageHeader);
