@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { cartItemsCount } from '../../reducers/cart';
 import Logo from '../Logo';
 import MenuToggler from '../MenuToggler';
 import MainNav from '../MainNav';
@@ -27,11 +28,7 @@ class PageHeader extends React.Component {
   }
 
   render() {
-    const { cart, siteMenu, catalogSections } = this.props;
-    const counter = cart.reduce(
-      (sum, item) => sum + item.quantity,
-      0
-    );
+    const { counter, siteMenu, catalogSections } = this.props;
 
     const menuItems = [].concat(
       catalogSections.map(section => ({
@@ -70,6 +67,9 @@ PageHeader.defaultProps = {
   siteMenu: []
 };
 
-const mapStateToProps = state => ({ cart: state.cart, catalogSections: state.catalogSections });
+const mapStateToProps = state => ({
+  counter: cartItemsCount(state.cart),
+  catalogSections: state.catalogSections,
+});
 
 export default connect(mapStateToProps, null, null, { pure: false })(PageHeader);
