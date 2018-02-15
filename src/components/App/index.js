@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import PageHeader from '../PageHeader';
 import PageContent from '../PageContent';
@@ -12,7 +12,7 @@ import Order from '../Order';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <Fragment>
         <PageHeader siteMenu={this.props.siteMenu} />
 
         <PageContent>
@@ -72,8 +72,7 @@ class App extends React.Component {
             </Popup>
           )}
         />
-
-      </div>
+      </Fragment>
     );
   }
 }
