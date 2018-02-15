@@ -25,11 +25,16 @@ class Order extends React.Component {
     );
   }
 
+  createOrder = evt => {
+    evt.preventDefault();
+    this.props.onOrderCreate();
+  }
+
   render() {
     const { cart, order, catalog, deliveryTypes, onItemDelete, onChangeQuantity, onFieldChange } = this.props;
 
     return (
-      <form className='order' method='post'>
+      <form className='order' method='post' onSubmit={this.createOrder}>
         <PageTitle>Ваш заказ</PageTitle>
 
         <Cart
@@ -77,7 +82,7 @@ class Order extends React.Component {
             onChange={onFieldChange}
           />
 
-          <Btn className='order__submit' type='button'>Сделать заказ</Btn>
+          <Btn className='order__submit' type='submit'>Сделать заказ</Btn>
         </div>
       </form>
     );
@@ -86,6 +91,7 @@ class Order extends React.Component {
 
 Order.propTypes = {
   deliveryTypes: PropTypes.arrayOf(PropTypes.shape({})),
+  onOrderCreate: PropTypes.func.isRequired,
   orderFields: PropTypes.shape({}),
   basket: PropTypes.arrayOf(PropTypes.shape({}))
 };
