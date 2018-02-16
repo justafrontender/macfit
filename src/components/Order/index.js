@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import find from 'lodash/find';
 import { connect } from 'react-redux';
 import { changeQuantity, deleteItem } from '../../actions/cart';
 import { update } from '../../actions/order';
+import { getBasketTotals } from '../../reducers';
 import Cart from '../Cart';
 import FieldText from '../FieldText';
 import RadioGroup from '../RadioGroup';
@@ -13,21 +13,9 @@ import Btn from '../Btn';
 import './style.scss';
 
 class Order extends React.Component {
-  getBasketTotals() {
-    return this.props.cart.reduce(
-      (sum, item) => {
-        const good = find(this.props.catalog, i => i.id === item.productId);
-        sum.count += item.quantity;
-        sum.price += good.price * item.quantity;
-        return sum;
-      },
-      { count: 0, price: 0 }
-    );
-  }
-
   createOrder = evt => {
     evt.preventDefault();
-    this.props.onOrderCreate();
+    this.props.createOrder();
   }
 
   render() {
@@ -40,7 +28,7 @@ class Order extends React.Component {
         <Cart
           catalog={catalog}
           basket={cart}
-          basketTotals={this.getBasketTotals()}
+          basketTotals={getBasketTotals(cart, catalog)}
           onItemDelete={onItemDelete}
           onChangeQuantity={onChangeQuantity}
         />
@@ -91,7 +79,7 @@ class Order extends React.Component {
 
 Order.propTypes = {
   deliveryTypes: PropTypes.arrayOf(PropTypes.shape({})),
-  onOrderCreate: PropTypes.func.isRequired,
+  createOrder: PropTypes.func.isRequired,
   orderFields: PropTypes.shape({}),
   basket: PropTypes.arrayOf(PropTypes.shape({}))
 };
