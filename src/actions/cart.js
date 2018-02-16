@@ -37,5 +37,5 @@ export const deleteItem = productId => {
 };
 
 export const clear = () => {
-  return { type: CLEAR };
+  return { type: `${model}/${CLEAR}` };
 };
