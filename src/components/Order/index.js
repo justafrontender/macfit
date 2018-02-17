@@ -85,6 +85,7 @@ Order.propTypes = {
 };
 
 const mapStateToProps = state => ({
+  catalog: state.catalog,
   cart: state.cart,
   order: state.order
 });

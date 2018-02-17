@@ -3,7 +3,7 @@
     {
         "id": "7566",
         "code": "fitburg-klassik",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитбург Классик",
         "pictures": [
             {
@@ -21,7 +21,7 @@
     {
         "id": "7567",
         "code": "fitburg-fulkhaus",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитбург Фулхаус",
         "pictures": [
             {
@@ -39,7 +39,7 @@
     {
         "id": "7568",
         "code": "fitburg-xxl",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитбург XXL",
         "pictures": [
             {
@@ -57,7 +57,7 @@
     {
         "id": "7569",
         "code": "fitburg-fitboss",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитбург Фитбосс",
         "pictures": [
             {
@@ -75,7 +75,7 @@
     {
         "id": "7570",
         "code": "fitburg-frantse",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитбург Францэ",
         "pictures": [
             {
@@ -93,7 +93,7 @@
     {
         "id": "7571",
         "code": "fitburg-grindey",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитбург Гриндэй",
         "pictures": [
             {
@@ -111,7 +111,7 @@
     {
         "id": "7572",
         "code": "fitroll-raz",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитролл Раз",
         "pictures": [
             {
@@ -129,7 +129,7 @@
     {
         "id": "7573",
         "code": "fitroll-dva",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитролл Два",
         "pictures": [
             {
@@ -147,7 +147,7 @@
     {
         "id": "7574",
         "code": "fitgril-s-kurinym-file-i-frantsuzskoy-gorchitsey",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитгриль с куриным филе и французской горчицей",
         "pictures": [
             {
@@ -165,7 +165,7 @@
     {
         "id": "7575",
         "code": "fitgril-s-kurinym-file-i-ovoshchami",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Фитгриль с куриным филе и овощами",
         "pictures": [
             {
@@ -183,7 +183,7 @@
     {
         "id": "7576",
         "code": "pitstsa-myasnaya",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Пицца мясная",
         "pictures": [
             {
@@ -201,7 +201,7 @@
     {
         "id": "7577",
         "code": "pitstsa-ovoshchnaya",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Пицца овощная",
         "pictures": [
             {
@@ -219,7 +219,7 @@
     {
         "id": "7578",
         "code": "naggetsy-6-sht",
-        "catalogSection": null,
+        "catalogSection": 1,
         "name": "Наггетсы 6 шт.",
         "pictures": [
             {
@@ -231,6 +231,42 @@
             }
         ],
         "price": "195",
+        "weight": "",
+        "description": ""
+    },
+    {
+        "id": "7579",
+        "code": "pelmeny-30-sht",
+        "catalogSection": 3,
+        "name": "Пельмени 30 шт.",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "595",
+        "weight": "",
+        "description": ""
+    },
+    {
+        "id": "7580",
+        "code": "pelmeny-60-sht",
+        "catalogSection": 3,
+        "name": "Пельмени 60 шт.",
+        "pictures": [
+            {
+                "w184": "\/api\/img\/paren.jpg",
+                "w368": "\/api\/img\/paren.jpg",
+                "w602": "\/api\/img\/paren.jpg",
+                "w1000": "\/api\/img\/paren.jpg",
+                "w1500": "\/api\/img\/paren.jpg"
+            }
+        ],
+        "price": "895",
         "weight": "",
         "description": ""
     }

@@ -42,3 +42,5 @@ const cart = (state = [], action) => {
 };
 
 export default cart;
+
+export const cartItemsCount = cartItems => cartItems.reduce((sum, item) => sum + item.quantity, 0);
