@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import PageHeader from '../PageHeader';
 import PageContent from '../PageContent';
@@ -14,7 +14,7 @@ class App extends React.Component {
     const { siteMenu, deliveryTypes, contacts } = this.props;
 
     return (
-      <div>
+      <Fragment>
         <PageHeader siteMenu={siteMenu} />
 
         <PageContent>
@@ -63,8 +63,7 @@ class App extends React.Component {
             </Popup>
           )}
         />
-
-      </div>
+      </Fragment>
     );
   }
 }
