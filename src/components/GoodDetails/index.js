@@ -67,7 +67,7 @@ class GoodDetails extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ cart: state.cart });
+const mapStateToProps = state => ({ catalog: state.catalog, cart: state.cart });
 const mapDispatchToProps = dispatch => ({ onAddToCart: id => dispatch(addItem(id)) });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GoodDetails);
