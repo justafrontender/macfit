@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import find from 'lodash/find';
+import filter from 'lodash/filter';
 import catalog from './catalog';
 import catalogSections from './catalogSections';
 import cart from './cart';
@@ -16,3 +17,12 @@ export const getBasketTotals = (cartItems, catalogItems) => cartItems.reduce(
   },
   { count: 0, price: 0 }
 );
+
+// eslint-disable-next-line
+export const getItemsFromSection = (match, catalogItems, catalogSections) => {
+  if (match) {
+    const section = find(catalogSections, ['code', match.params.sectionCode]);
+    return section !== undefined ? filter(catalogItems, ['catalogSection', section.id]) : [];
+  }
+  return catalogItems;
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addItem } from '../../actions/cart';
-import { getItemsFromSection } from '../../reducers/catalog';
+import { getItemsFromSection } from '../../reducers';
 import GoodTile from '../GoodTile';
 import './style.scss';
 
