@@ -11,46 +11,40 @@ import Order from '../Order';
 
 class App extends React.Component {
   render() {
+    const { siteMenu, deliveryTypes, contacts } = this.props;
+
     return (
       <div>
-        <PageHeader siteMenu={this.props.siteMenu} />
+        <PageHeader siteMenu={siteMenu} />
 
         <PageContent>
           <Switch>
             <Route
               exact
               path='/'
-              render={() => (
-                <GoodsList
-                  catalog={this.props.catalog}
-                />
-              )}
+              render={() => <GoodsList />}
             />
 
             <Route
               path='/order/'
-              render={() => (
-                <Order
-                  catalog={this.props.catalog}
-                  deliveryTypes={this.props.deliveryTypes}
-                />
-              )}
+              render={() => <Order deliveryTypes={deliveryTypes} />}
             />
 
             <Route
               path='/contacts/'
               render={() => (
-                <ContactsPage contacts={this.props.contacts} />
+                <ContactsPage contacts={contacts} />
               )}
             />
 
             <Route
               path='/product/:productCode/'
-              render={() => (
-                <GoodsList
-                  catalog={this.props.catalog}
-                />
-              )}
+              render={() => <GoodsList />}
+            />
+
+            <Route
+              path='/:sectionCode'
+              render={({ history, match }) => <GoodsList history={history} match={match} />}
             />
 
             <Route
@@ -59,16 +53,13 @@ class App extends React.Component {
           </Switch>
         </PageContent>
 
-        <PageFooter contacts={this.props.contacts} />
+        <PageFooter contacts={contacts} />
 
         <Route
           path='/product/:productCode/'
           render={props => (
             <Popup history={props.history}>
-              <GoodDetails
-                catalog={this.props.catalog}
-                {...props}
-              />
+              <GoodDetails {...props} />
             </Popup>
           )}
         />
