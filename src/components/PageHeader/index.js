@@ -16,15 +16,15 @@ class PageHeader extends React.Component {
   }
 
   state = {
-    menuOpened: this.props.menuOpenedInitially
+    isMenuOpened: this.props.menuOpenedInitially
   };
 
   menuToggle() {
-    this.setState(prevState => ({ menuOpened: !prevState.menuOpened }));
+    this.setState(prevState => ({ isMenuOpened: !prevState.isMenuOpened }));
   }
 
   menuClose() {
-    this.setState(prevState => ({ menuOpened: prevState ? false : null }));
+    this.setState(prevState => ({ isMenuOpened: prevState ? false : null }));
   }
 
   render() {
@@ -45,8 +45,8 @@ class PageHeader extends React.Component {
           <MenuToggler onClick={this.menuToggle} counter={counter} />
           <MainNav
             menuItems={menuItems}
-            menuOpened={this.state.menuOpened}
-            onClick={this.menuClose}
+            isOpened={this.state.isMenuOpened}
+            onClose={this.menuClose}
             counter={counter}
           />
         </div>
