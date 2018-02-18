@@ -20,7 +20,7 @@ import './scss/global.scss';
 import './favicons';
 
 // temporarely include backend stub
-import './static/api';
+// import './static/api';
 
 const getInitialData = dispatch => Promise.all([
   catalogApi.get()

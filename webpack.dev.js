@@ -9,7 +9,16 @@ const devConfig = {
   devServer: {
     contentBase: './static',
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    progress: true,
+    proxy: [
+      {
+        context: ['/api', '/upload'],
+        target: 'http://mf.litedisc.ru:80',
+        changeOrigin: true,
+        secure: false
+      }
+    ]
   },
 };
 
