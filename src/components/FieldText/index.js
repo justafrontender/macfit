@@ -6,7 +6,7 @@ class FieldText extends React.Component {
   render() {
     return (
       <label className={`field-text ${this.props.classMix}`}>
-        <span className='field-text__name'>Ваш номер телефона:</span>
+        <span className='field-text__name'>{this.props.title}:</span>
         {
           this.props.type === 'textarea' ?
             <textarea
