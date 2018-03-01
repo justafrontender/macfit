@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { changeQuantity, deleteItem } from '../../actions/cart';
-import { update } from '../../actions/order';
+import { create, update } from '../../actions/order';
 import { getBasketTotals } from '../../reducers';
 import Cart from '../Cart';
 import FieldText from '../FieldText';
@@ -90,6 +90,7 @@ const mapStateToProps = state => ({
   order: state.order
 });
 const mapDispatchToProps = dispatch => ({
+  createOrder: () => dispatch(create()),
   onItemDelete: productId => dispatch(deleteItem(productId)),
   onChangeQuantity: (productId, amount) => dispatch(changeQuantity(productId, amount)),
   onFieldChange: event => {
