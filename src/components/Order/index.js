@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import find from 'lodash/find';
 import { changeQuantity, deleteItem } from '../../actions/cart';
 import { create, update } from '../../actions/order';
 import { getBasketTotals } from '../../reducers';
@@ -20,6 +21,7 @@ class Order extends React.Component {
 
   render() {
     const { cart, order, catalog, deliveryTypes, onItemDelete, onChangeQuantity, onFieldChange } = this.props;
+    const deliveryType = find(deliveryTypes, i => i.id === order.deliveryType);
 
     return (
       <form className='order' method='post' onSubmit={this.createOrder}>
@@ -39,13 +41,13 @@ class Order extends React.Component {
             name='deliveryType'
             onChange={onFieldChange}
           >
-            {deliveryTypes.map(deliveryType => (
+            {deliveryTypes.map(delivery => (
               <Radio
-                key={deliveryType.id}
-                value={deliveryType.id}
-                checked={deliveryType.id === order.deliveryType}
+                key={delivery.id}
+                value={delivery.id}
+                checked={delivery.id === order.deliveryType}
               >
-                {deliveryType.name}
+                {delivery.name}
               </Radio>
             ))}
           </RadioGroup>
@@ -69,6 +71,18 @@ class Order extends React.Component {
             value={order.note}
             onChange={onFieldChange}
           />
+
+          {deliveryType && deliveryType.fields && deliveryType.fields.map(field => (
+            <FieldText
+              key={field.name}
+              classMix='order__field'
+              title={field.title}
+              type={field.type}
+              name={field.name}
+              value={order[field.name]}
+              onChange={onFieldChange}
+            />
+          ))}
 
           <Btn className='order__submit' type='submit'>Сделать заказ</Btn>
         </div>

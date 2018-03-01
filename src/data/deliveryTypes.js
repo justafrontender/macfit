@@ -15,6 +15,7 @@ const deliveryTypes = [
     fields: [
       {
         name: 'address',
+        title: 'Адрес',
         type: 'text',
         required: true
       }
