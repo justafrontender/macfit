@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from 'react-router-dom/BrowserRouter';
 import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
+import reducer from './reducers';
 import { restore as restoreCart } from './actions/cart';
 import { get as getCatalog } from './actions/catalog';
 import { get as getCatalogSections } from './actions/catalogSections';
 
-import store from './store';
 import createStorage from './lib/localstorage.js';
 import deliveryTypes from './data/deliveryTypes';
 import catalogApi from './server/catalog';
@@ -21,6 +24,8 @@ import './favicons';
 
 // temporarely include backend stub
 // import './static/api';
+
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 const getInitialData = dispatch => Promise.all([
   catalogApi.get()
