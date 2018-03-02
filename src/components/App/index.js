@@ -58,7 +58,7 @@ class App extends React.Component {
         <Route
           path='/product/:productCode/'
           render={props => (
-            <Popup history={props.history}>
+            <Popup history={props.history} type='big' closeButton>
               <GoodDetails {...props} />
             </Popup>
           )}
