@@ -55,7 +55,7 @@ class Popup extends React.Component {
     const { children, closeButton, type } = this.props;
     return (
       // eslint-disable-next-line
-      <div className='popup' onClick={this.onClose} tabIndex='0'>
+      <div className='popup popup--visible' onClick={this.onClose} tabIndex='0'>
         <div className={b('popup__inner', type)}>
           {
             closeButton &&
