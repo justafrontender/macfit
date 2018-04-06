@@ -80,6 +80,7 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['.js', '.json', '.scss', '*']
+    extensions: ['.js', '.json', '.scss', '*'],
+    modules: [`node_modules`, 'src']
   }
 };

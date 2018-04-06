@@ -2,11 +2,16 @@
 
 .good-details {
   width: 100%;
+  border: solid 10px transparent;
+  border-bottom-width: 0;
   overflow: auto;
+  background-color: #fff;
+  border-radius: 15px 15px 0 0;
 }
 
 .good-details__image {
   display: flex;
+  border-radius: 5px;
   align-items: center;
   overflow: hidden;
 
@@ -43,8 +48,10 @@
 @media #{$tablet-widths} {
   .good-details {
     display: flex;
+    border-bottom-width: 10px;
     flex-direction: row;
     overflow: hidden;
+    border-radius: 15px;
   }
 
   .good-details__image {

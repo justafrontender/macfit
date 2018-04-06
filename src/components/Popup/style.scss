@@ -7,10 +7,14 @@
   right: 0;
   bottom: 0;
   z-index: $popup-z-index;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, .7);
+  background-color: rgba(black, 0.7);
+
+  &--visible {
+    display: flex;
+  }
 }
 
 .popup__inner {
@@ -37,13 +41,11 @@
   z-index: 16;
 }
 
-@media #{$mobile-only} {
+@media #{$mobile-wide-only} {
   .popup__inner {
-    &--message {
-      @include popup-shadow;
-
-      background: white;
-    }
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
