@@ -7,5 +7,9 @@ install: "npm i"
 
 before_script: "npm run build"
 
+branches:
+  only:
+  - master
+
 notifications:
   email: false
