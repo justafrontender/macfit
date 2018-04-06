@@ -1,11 +1,11 @@
 import React from 'react';
-import SocialLinks from '../SocialLinks';
+import SocialLinks from 'components/SocialLinks';
 import './style.scss';
 
 const PageFooter = ({ contacts }) => (
   <footer className='page-footer'>
     <div className='container container--space page-footer__container'>
-      <section className='footer-contacts'>
+      <section className='page-footer__section footer-contacts '>
         <p>
           {contacts.address}<br />
           <a
@@ -17,9 +17,9 @@ const PageFooter = ({ contacts }) => (
         </p>
       </section>
 
-      <SocialLinks contacts={contacts} />
+      <SocialLinks className='page-footer__section' contacts={contacts} />
 
-      <section className='copyright'>
+      <section className='page-footer__section copyright'>
         {'Разработал '}
         <a
           className='copyright__link'

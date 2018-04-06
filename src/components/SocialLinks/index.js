@@ -1,4 +1,5 @@
 import React from 'react';
+import join from 'lodash/join';
 import './style.scss';
 
 const socials = [
@@ -7,9 +8,9 @@ const socials = [
   { id: 'insta', name: 'Instagram' }
 ];
 
-const SocialLinks = ({ contacts: { socialLinks } }) => (
-  <section className='social-links'>
-    <span>Подружитесь с нами!</span>
+const SocialLinks = ({ contacts: { socialLinks }, className }) => (
+  <section className={join([className, 'social-links'], ' ')}>
+    <span className='social-links__title'>Подружитесь с нами!</span>
     <ul className='social-links__list'>
       {
         socials.map(item => (
