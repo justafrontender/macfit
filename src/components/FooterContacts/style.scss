@@ -1,4 +1,7 @@
 @import '../../scss/vars.scss';
+.footer-contacts {
+  text-align: center;
+}
 
 .footer-contacts__link {
   font-weight: bold;
@@ -10,5 +13,11 @@
 
   p {
     margin: 10px 0;
+  }
+}
+
+@media #{$tablet-widths} {
+  .footer-contacts {
+    text-align: left;
   }
 }
