@@ -27,9 +27,12 @@
   padding-bottom: 10px;
 }
 
-@media #{$mobile-wide-widths} {
+@media #{$tablet-widths} {
   .page-footer__container {
     flex-direction: row;
-    flex-wrap: wrap;
+  }
+
+  .page-footer__section {
+    width: 30%;
   }
 }
