@@ -41,7 +41,11 @@ class Popup extends React.Component {
   };
 
   close = () => {
-    const { history } = this.props;
+    const { history, onClose } = this.props;
+    if (onClose) {
+      onClose();
+      return;
+    }
     if (!history) return;
     if (history.action === 'PUSH') {
       history.goBack();
