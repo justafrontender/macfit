@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
-import PageHeader from '../PageHeader';
-import PageContent from '../PageContent';
-import PageFooter from '../PageFooter';
-import Popup from '../Popup';
-import GoodsList from '../GoodsList';
-import GoodDetails from '../GoodDetails';
-import ContactsPage from '../ContactsPage';
-import Order from '../Order';
+import ContactsPage from 'components/ContactsPage';
+import Dialogs from 'components/Dialogs';
+import GoodsList from 'components/GoodsList';
+import GoodDetails from 'components/GoodDetails';
+import Order from 'components/Order';
+import PageHeader from 'components/PageHeader';
+import PageContent from 'components/PageContent';
+import PageFooter from 'components/PageFooter';
+import Popup from 'components/Popup';
 
 class App extends React.Component {
   render() {
