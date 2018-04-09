@@ -23,7 +23,6 @@ export const update = (field, value) => {
 };
 
 export const create = () => (dispatch, getState) => {
-  console.log('crete');
   dispatch({ type: `${model}/${CREATE_REQUEST}` });
   const { cart, order } = getState();
   serverApi.create({ cart, order })
