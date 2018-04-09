@@ -1,12 +1,5 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const csso = require('postcss-csso');
-
-const extractSass = new ExtractTextPlugin({
-  filename: 'style.[contenthash:6].css'
-});
 
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   filename: 'index.html',
@@ -25,29 +18,6 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.scss$/,
-        use: extractSass.extract({
-          use: [
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [
-                  autoprefixer({
-                    browsers: [
-                      'last 2 versions',
-                      'iOS 8'
-                    ]
-                  }),
-                  csso()
-                ]
-              }
-            },
-            'sass-loader'
-          ]
-        })
-      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -75,7 +45,6 @@ module.exports = {
   },
 
   plugins: [
-    extractSass,
     htmlWebpackPlugin
   ],
 
