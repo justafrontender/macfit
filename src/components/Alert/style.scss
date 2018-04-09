@@ -1,0 +1,31 @@
+@import '../../scss/vars.scss';
+
+.Alert {
+  width: 100%;
+  padding: 30px 40px;
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+}
+
+.Alert__children {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.Alert__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.Alert__buttons > * {
+  flex-grow: 1;
+}
+
+@media #{$tablet-widths} {
+  .Alert {
+    overflow: hidden;
+    border-radius: 15px;
+
+    @include popup-shadow;
+  }
+}

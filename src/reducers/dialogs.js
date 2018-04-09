@@ -23,6 +23,9 @@ const dialogs = (state = [], action) => {
     case `${model}/${CLOSE}`:
       return state.slice(0, -1);
 
+    case `order/CREATE_RESPONSE`:
+      return [...state, { ...initialDialog, children: `Ваш номер заказа: ${action.response.id}` }];
+
     default:
       return state;
   }

@@ -63,6 +63,8 @@ class App extends React.Component {
             </Popup>
           )}
         />
+
+        <Dialogs />
       </Fragment>
     );
   }
