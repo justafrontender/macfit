@@ -1,11 +1,12 @@
-import { model, UPDATE, RESTORE } from '../actions/order';
+import { model, CREATE_ERROR, CREATE_REQUEST, CREATE_RESPONSE, UPDATE, RESTORE } from '../actions/order';
 /* eslint-disable no-case-declarations */
 
 const defaultState = {
   phoneNumber: '',
   address: '',
   note: '',
-  deliveryType: ''
+  deliveryType: '',
+  fetching: false
 };
 
 const order = (state = defaultState, action) => {
@@ -18,6 +19,13 @@ const order = (state = defaultState, action) => {
         return { ...state, [action.field]: action.value };
       }
       return state;
+
+    case `${model}/${CREATE_REQUEST}`:
+      return { ...state, fetching: true };
+
+    case `${model}/${CREATE_RESPONSE}`:
+    case `${model}/${CREATE_ERROR}`:
+      return { ...state, fetching: false };
 
     default:
       return state;

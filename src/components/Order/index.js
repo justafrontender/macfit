@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import find from 'lodash/find';
@@ -8,6 +8,7 @@ import { getBasketTotals } from '../../reducers';
 import Cart from '../Cart';
 import FieldText from '../FieldText';
 import RadioGroup from '../RadioGroup';
+import Popup from '../Popup';
 import Radio from '../Radio';
 import PageTitle from '../PageTitle';
 import Btn from '../Btn';
@@ -24,69 +25,72 @@ class Order extends React.Component {
     const deliveryType = find(deliveryTypes, i => i.id === order.deliveryType);
 
     return (
-      <form className='order' method='post' onSubmit={this.createOrder}>
-        <PageTitle>Ваш заказ</PageTitle>
+      <Fragment>
+        <form className='order' method='post' onSubmit={this.createOrder}>
+          <PageTitle>Ваш заказ</PageTitle>
 
-        <Cart
-          catalog={catalog}
-          basket={cart}
-          basketTotals={getBasketTotals(cart, catalog)}
-          onItemDelete={onItemDelete}
-          onChangeQuantity={onChangeQuantity}
-        />
-
-        <div className='order__fields'>
-          <RadioGroup
-            title='Доставка:'
-            name='deliveryType'
-            onChange={onFieldChange}
-          >
-            {deliveryTypes.map(delivery => (
-              <Radio
-                key={delivery.id}
-                value={delivery.id}
-                checked={delivery.id === order.deliveryType}
-              >
-                {delivery.name}
-              </Radio>
-            ))}
-          </RadioGroup>
-
-          <FieldText
-            classMix='order__field'
-            title='Ваш номер телефона:'
-            type='tel'
-            name='phoneNumber'
-            placeholder='+79189999999'
-            value={order.phoneNumber}
-            onChange={onFieldChange}
+          <Cart
+            catalog={catalog}
+            basket={cart}
+            basketTotals={getBasketTotals(cart, catalog)}
+            onItemDelete={onItemDelete}
+            onChangeQuantity={onChangeQuantity}
           />
 
-          <FieldText
-            classMix='order__field'
-            title='Примечания к заказу:'
-            type='textarea'
-            name='note'
-            placeholder='Например: пиццу сделайте острее, а фитбург без французской горчицы'
-            value={order.note}
-            onChange={onFieldChange}
-          />
+          <div className='order__fields'>
+            <RadioGroup
+              title='Доставка:'
+              name='deliveryType'
+              onChange={onFieldChange}
+            >
+              {deliveryTypes.map(delivery => (
+                <Radio
+                  key={delivery.id}
+                  value={delivery.id}
+                  checked={delivery.id === order.deliveryType}
+                >
+                  {delivery.name}
+                </Radio>
+              ))}
+            </RadioGroup>
 
-          {deliveryType && deliveryType.fields && deliveryType.fields.map(field => (
             <FieldText
-              key={field.name}
               classMix='order__field'
-              title={field.title}
-              type={field.type}
-              name={field.name}
-              value={order[field.name]}
+              title='Ваш номер телефона:'
+              type='tel'
+              name='phoneNumber'
+              placeholder='+79189999999'
+              value={order.phoneNumber}
               onChange={onFieldChange}
             />
-          ))}
 
-          <Btn className='order__submit' type='submit'>Сделать заказ</Btn>
-        </div>
-      </form>
+            <FieldText
+              classMix='order__field'
+              title='Примечания к заказу:'
+              type='textarea'
+              name='note'
+              placeholder='Например: пиццу сделайте острее, а фитбург без французской горчицы'
+              value={order.note}
+              onChange={onFieldChange}
+            />
+
+            {deliveryType && deliveryType.fields && deliveryType.fields.map(field => (
+              <FieldText
+                key={field.name}
+                classMix='order__field'
+                title={field.title}
+                type={field.type}
+                name={field.name}
+                value={order[field.name]}
+                onChange={onFieldChange}
+              />
+            ))}
+
+            <Btn className='order__submit' type='submit'>Сделать заказ</Btn>
+          </div>
+        </form>
+        {order.fetching && <Popup>Order Fetching</Popup>}
+      </Fragment>
     );
   }
 }
