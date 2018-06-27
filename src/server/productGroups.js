@@ -1,7 +1,7 @@
 export default {
   get() {
     return new Promise((resolve, reject) => {
-      fetch('/api/catalog/')
+      fetch('/api/productGroups/')
         .then(response => response.json())
         .then(obj => {
           resolve(obj);

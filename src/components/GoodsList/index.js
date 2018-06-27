@@ -8,9 +8,9 @@ import './style.scss';
 
 class GoodsList extends React.Component {
   render() {
-    const { catalog, catalogSections, heading, history, match, onAddToCart } = this.props;
+    const { products, productGroups, heading, history, match, onAddToCart } = this.props;
 
-    const items = getItemsFromSection(match, catalog, catalogSections);
+    const items = getItemsFromSection(match, products, productGroups);
     if (!items.length) {
       history.push('/');
     }
@@ -48,7 +48,7 @@ GoodsList.defaultProps = {
   heading: 'Меню MacFit',
 };
 
-const mapStateToProps = state => ({ catalog: state.catalog, catalogSections: state.catalogSections });
+const mapStateToProps = ({ products, productGroups }) => ({ products, productGroups });
 const mapDispatchToProps = dispatch => ({ onAddToCart: id => dispatch(addItem(id)) });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GoodsList);

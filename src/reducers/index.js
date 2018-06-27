@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import find from 'lodash/find';
 import filter from 'lodash/filter';
-import catalog from './catalog';
-import catalogSections from './catalogSections';
+import products from './products';
+import productGroups from './productGroups';
 import cart from './cart';
 import dialogs from './dialogs';
 import order from './order';
 
-export default combineReducers({ catalog, catalogSections, cart, dialogs, order });
+export default combineReducers({ products, productGroups, cart, dialogs, order });
 
 export const getBasketTotals = (cartItems, catalogItems) => cartItems.reduce(
   (sum, item) => {
@@ -20,9 +20,9 @@ export const getBasketTotals = (cartItems, catalogItems) => cartItems.reduce(
 );
 
 // eslint-disable-next-line
-export const getItemsFromSection = (match, catalogItems, catalogSections) => {
+export const getItemsFromSection = (match, catalogItems, productGroups) => {
   if (match) {
-    const section = find(catalogSections, ['code', match.params.sectionCode]);
+    const section = find(productGroups, ['code', match.params.sectionCode]);
     return section !== undefined ? filter(catalogItems, ['catalogSection', section.id]) : [];
   }
   return catalogItems;

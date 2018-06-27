@@ -10,7 +10,7 @@ import './style.scss';
 class GoodDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.good = find(this.props.catalog, ['code', this.props.match.params.productCode]);
+    this.good = find(this.props.products, ['code', this.props.match.params.productCode]);
   }
 
   render() {
@@ -67,7 +67,7 @@ class GoodDetails extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ catalog: state.catalog, cart: state.cart });
+const mapStateToProps = ({ products, cart }) => ({ products, cart });
 const mapDispatchToProps = dispatch => ({ onAddToCart: id => dispatch(addItem(id)) });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GoodDetails);

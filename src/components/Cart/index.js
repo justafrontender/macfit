@@ -7,7 +7,7 @@ import './style.scss';
 class Cart extends React.Component {
   render() {
     const basket = this.props.basket.map(item => {
-      item.good = find(this.props.catalog, ['id', item.productId]);
+      item.good = find(this.props.products, ['id', item.productId]);
       return item;
     });
 

@@ -21,7 +21,7 @@ class Order extends React.Component {
   }
 
   render() {
-    const { cart, order, catalog, deliveryTypes, onItemDelete, onChangeQuantity, onFieldChange } = this.props;
+    const { cart, order, products, deliveryTypes, onItemDelete, onChangeQuantity, onFieldChange } = this.props;
     const deliveryType = find(deliveryTypes, i => i.id === order.deliveryType);
 
     return (
@@ -30,9 +30,9 @@ class Order extends React.Component {
           <PageTitle>Ваш заказ</PageTitle>
 
           <Cart
-            catalog={catalog}
+            products={products}
             basket={cart}
-            basketTotals={getBasketTotals(cart, catalog)}
+            basketTotals={getBasketTotals(cart, products)}
             onItemDelete={onItemDelete}
             onChangeQuantity={onChangeQuantity}
           />
@@ -102,10 +102,14 @@ Order.propTypes = {
   basket: PropTypes.arrayOf(PropTypes.shape({}))
 };
 
-const mapStateToProps = state => ({
-  catalog: state.catalog,
-  cart: state.cart,
-  order: state.order
+const mapStateToProps = ({
+  products,
+  cart,
+  order
+}) => ({
+  products,
+  cart,
+  order
 });
 const mapDispatchToProps = dispatch => ({
   createOrder: () => dispatch(create()),

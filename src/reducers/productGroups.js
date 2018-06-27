@@ -1,4 +1,4 @@
-import { model, GET } from '../actions/catalogSections';
+import { model, GET } from '../actions/productGroups';
 
 const defaultState = [];
 
