@@ -28,12 +28,12 @@ class PageHeader extends React.Component {
   }
 
   render() {
-    const { counter, siteMenu, catalogSections } = this.props;
+    const { counter, siteMenu, productGroups } = this.props;
 
     const menuItems = [].concat(
-      catalogSections.map(section => ({
-        name: section.name,
-        href: `/${section.code}`
+      productGroups.map(group => ({
+        name: group.name,
+        href: `/${group.code}`
       })),
       siteMenu
     );
@@ -57,19 +57,19 @@ class PageHeader extends React.Component {
 
 PageHeader.propTypes = {
   menuOpenedInitially: PropTypes.bool,
-  catalogSections: PropTypes.arrayOf(PropTypes.shape({})),
+  productGroups: PropTypes.arrayOf(PropTypes.shape({})),
   siteMenu: PropTypes.arrayOf(PropTypes.shape({}))
 };
 
 PageHeader.defaultProps = {
   menuOpenedInitially: false,
-  catalogSections: [],
+  productGroups: [],
   siteMenu: []
 };
 
 const mapStateToProps = state => ({
   counter: cartItemsCount(state.cart),
-  catalogSections: state.catalogSections,
+  productGroups: state.productGroups,
 });
 
 export default connect(mapStateToProps, null, null, { pure: false })(PageHeader);

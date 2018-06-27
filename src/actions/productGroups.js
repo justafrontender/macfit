@@ -1,4 +1,4 @@
-export const model = 'catalog';
+export const model = 'productGroups';
 
 export const GET = 'GET';
 

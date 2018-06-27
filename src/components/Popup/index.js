@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import b from '../../lib/b';
 import CircleBtn from '../CircleBtn';
 import './style.scss';
 
@@ -39,27 +41,42 @@ class Popup extends React.Component {
   };
 
   close = () => {
-    if (this.props.history.action === 'PUSH') {
-      this.props.history.goBack();
+    const { history, onClose } = this.props;
+    if (onClose) {
+      onClose();
+      return;
+    }
+    if (!history) return;
+    if (history.action === 'PUSH') {
+      history.goBack();
     }
     else {
-      this.props.history.push('/');
+      history.push('/');
     }
   };
 
   render() {
+    const { children, closeButton, type } = this.props;
     return (
       // eslint-disable-next-line
       <div className='popup popup--visible' onClick={this.onClose} tabIndex='0'>
-        <div className='popup__inner'>
-          <div className='popup__controls'>
-            <CircleBtn bemMod='x' type='button' onClick={this.onClose}>Закрыть</CircleBtn>
-          </div>
-          {this.props.children}
+        <div className={b('popup__inner', type)}>
+          {
+            closeButton &&
+            <div className='popup__controls'>
+              <CircleBtn bemMod='x' type='button' onClick={this.onClose}>Закрыть</CircleBtn>
+            </div>
+          }
+          {children}
         </div>
       </div>
     );
   }
 }
+
+Popup.propTypes = {
+  closeButton: PropTypes.bool,
+  type: PropTypes.oneOf(['big', 'message'])
+};
 
 export default Popup;

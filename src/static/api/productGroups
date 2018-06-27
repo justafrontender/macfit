@@ -1,0 +1,21 @@
+{
+  "data": {
+    "productGroups": [
+      {
+        "id": 1,
+        "code": "macfit",
+        "name": "MacFit"
+      },
+      {
+        "id": 2,
+        "code": "sweet",
+        "name": "Сладости"
+      },
+      {
+        "id": 3,
+        "code": "eatfit",
+        "name": "EatFit"
+      }
+    ]
+  }
+}

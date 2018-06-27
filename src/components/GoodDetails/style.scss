@@ -52,6 +52,8 @@
     flex-direction: row;
     overflow: hidden;
     border-radius: 15px;
+
+    @include popup-shadow;
   }
 
   .good-details__image {

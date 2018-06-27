@@ -8,23 +8,27 @@
   bottom: 0;
   z-index: $popup-z-index;
   display: none;
-  background-color: rgba(black, 0.7);
+  justify-content: center;
+  align-items: flex-end;
+  background-color: rgba(black, 0.3);
 
   &--visible {
-    display: block;
+    display: flex;
   }
 }
 
 .popup__inner {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   z-index: $popup-z-index;
   display: flex;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   color: $primary-text-color;
   -webkit-overflow-scrolling: touch;
+
+  &--big {
+    height: 100%;
+  }
 }
 
 .popup__controls {
@@ -43,12 +47,17 @@
 }
 
 @media #{$tablet-widths} {
+  .popup {
+    align-items: center;
+  }
+
   .popup__inner {
-    top: 50%;
-    left: 50%;
-    max-width: 900px;
-    max-height: 600px;
-    transform: translate(-50%, -50%);
-    @include popup-shadow;
+    width: auto;
+
+    &--message,
+    &--big {
+      max-width: 900px;
+      max-height: 600px;
+    }
   }
 }
